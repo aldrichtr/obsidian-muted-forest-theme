@@ -1,34 +1,142 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+:root {
+  --ta-green-deep-dark: #1e1e19;
+  --ta-green-dark: #282822;
+  --ta-green-oak-bark: #371F17;
+  --ta-green-forest-floor: #403F34;
+  --ta-green-evergreen: #6D6A46;
+  --ta-red-rustic-leather: #5E2E2E;
+  --ta-red-cabin-logs: #936538;
+  --ta-red-sandbox: #BDAE8F;
+  --ta-red-iron-oxide: #7A3B3B;
+  --ta-red-dried-berry: #8B4A4A;
+  --ta-red-clay: #A05C45;
+  --ta-red-worn-brick: #9C5B52;
+  --ta-blue-river: #5F6D6C;
+  --ta-blue-birch: #F6F0E6;
+  --ta-blue-slate: #4F5A63;
+  --ta-blue-storm: #6A7A80;
+  --ta-blue-deep-river: #3E4A4C;
+  --ta-blue-faded-denim: #7C8A8C;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+ .theme-dark {
+  --tab-outline-color: var(--ta-green-dark);
+  --tab-curve: var(--radius-l);
+  --tab-radius: var(--radius-l);
+  --tab-radius-active: var(--radius-l);
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+
+
+ body {
+   --font-text-size: 12px;
+ }
+
+ .theme-dark {
+   --color: var(--ta-green-oak-bark);
+   --background-primary: var(--ta-green-deep-dark);
+   --background-secondary: var(--ta-green-dark);
+   --h1-color: var(--ta-green-evergreen);
+
+   --h2-color: var(--ta-red-sandbox);
+   --h3-color: var(--ta-red-cabin-logs);
+
+   --link-color: var(--ta-blue-river);
+   --link-color-hover: var(--ta-red-sandbox);
+   --link-external-color: var(--ta-green-evergreen);
+   --link-external-color-hover: var(--ta-red-sandbox);
+
+   --tag-background: var(--ta-blue-storm);
+   --tag-color: var(--ta-blue-birch);
+
+   --tag-background-hover: var(--ta-blue-birch);
+   --tag-color-hover: var(--ta-blue-storm);
+
+
+   --metadata-border-color: var(--ta-green-forest-floor);
+   --metadata-border-radius: var(--radius-l);
+   --metadata-border-width: 3px;
+ }
+
+
+.tag:not(.token) {
+  border: none;
+  color: white;
+  font-size: 11px;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
-.menu {
-	padding: var(--size-2-1);
+.tag[href^="#obsidian"] {
+  background-color: #4d3ca6;
 }
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
-}
 
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+.status-bar {
+  width: var(--file-line-width);
+}
+.status-bar-item.plugin-obsidian-cursor-location-plugin {
+  color: var(--ta-red-cabin-logs);
+  font-weight: var(--font-bold);
+}
+.status-bar-item.plugin-obsidian-vimrc-support {
+  --text-color-normal: var(--ta-blue-birch);
+  --background-color-normal: var(--ta-red-cabin-logs);
+  --text-color-insert: var(--ta-blue-birch);
+  --background-color-insert: var(--ta-blue-river);
+  --text-color-visual: var(--ta-red-cabin-logs);
+  --background-color-visual: var(--ta-blue-birch);
+  --text-color-replace: var(--ta-blue-birch);
+  --background-color-replace: var(--ta-red-rustic-leather);
+}
+.status-bar-item.plugin-obsidian-vimrc-support {
+  order: -9999;
+  margin: -4px auto -5px -5px;
+  padding-right: 0px;
+  padding-left: 1em;
+  font-family: 'FiraCode Nerd Font Mono';
+  font-weight: bold;
+  font-size: 1.2em;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.status-bar-item.plugin-obsidian-vimrc-support:after {
+  content: '';
+  position: relative;
+  font-size: 1.5rem;
+  left: 0.9rem;
+  margin-top: 0.1rem;
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="normal"]:after {
+  color: var(--background-color-normal);
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="normal"] {
+  color: var(--text-color-normal);
+  background-color: var(--background-color-normal);
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="insert"]:after {
+  color: var(--background-color-insert);
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="insert"] {
+  color: var(--text-color-insert);
+  background-color: var(--background-color-insert);
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="visual"]:after {
+  color: var(--background-color-visual);
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="visual"] {
+  color: var(--text-color-visual);
+  background-color: var(--background-color-visual);
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="replace"]:after {
+  color: var(--background-color-replace);
+}
+.status-bar-item.vimrc-support-vim-mode[data-vim-mode="replace"] {
+  color: var(--text-color-replace);
+  background-color: var(--background-color-replace);
 }

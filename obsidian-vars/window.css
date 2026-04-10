@@ -1,0 +1,59 @@
+/* SECTION Divider --------------------------------------------------------------- */
+/* --divider-color  Divider border color */
+/* --divider-color-hover  Divider border color (hover) */
+/* --divider-width  Divider border width */
+/* --divider-width-hover  Divider border width (hover) */
+/* --divider-vertical-height  Divider vertical height */
+/* !SECTION Divider --------------------------------------------------------------- */
+
+/* SECTION Ribbon ---------------------------------------------------------------- */
+/* --ribbon-background  Ribbon background color */
+/* --ribbon-background-collapsed  Ribbon background color (collapsed sidebar) */
+/* --ribbon-width  Ribbon width */
+/* --ribbon-padding  Ribbon padding */
+/* !SECTION Ribbon ---------------------------------------------------------------- */
+
+/* SECTION Scrollbar ------------------------------------------------------------- */
+/* --scrollbar-bg  Scrollbar background color */
+/* --scrollbar-thumb-bg  Scrollbar thumb background color */
+/* --scrollbar-active-thumb-bg  Scrollbar thumb background color (active) */
+/* !SECTION Scrollbar ------------------------------------------------------------- */
+
+/* SECTION Sidebar --------------------------------------------------------------- */
+/* --sidebar-markdown-font-size  Font size for Markdown files in sidebars */
+/* --sidebar-tab-text-display  display` property for tab text in sidebars */
+/* !SECTION Sidebar --------------------------------------------------------------- */
+
+/* SECTION Status bar ------------------------------------------------------------ */
+/* --status-bar-background  Status bar background color */
+/* --status-bar-border-color  Status bar border color */
+/* --status-bar-border-width  Status bar border width */
+/* --status-bar-font-size  Status bar font size */
+/* --status-bar-text-color  Status bar text color */
+/* --status-bar-position  Status bar `position` property */
+/* --status-bar-radius  Status bar radius */
+/* --status-bar-scroll-padding  Status bar scroll padding */
+/* !SECTION Status bar ------------------------------------------------------------ */
+
+/* SECTION Vault profile --------------------------------------------------------- */
+/* --vault-profile-display  display` property for the vault profile */
+/* --vault-profile-actions-display  display` property for the action buttons in the vault profile */
+/* --vault-profile-font-size  Font size */
+/* --vault-profile-font-weight  Font weight */
+/* --vault-profile-color  Text color */
+/* --vault-profile-color-hover  Text color (hover) */
+/* !SECTION Vault profile --------------------------------------------------------- */
+
+/* SECTION Window frame ---------------------------------------------------------- */
+/* --titlebar-background  Titlebar background color */
+/* --titlebar-background-focused  Titlebar background color (focused window) */
+/* --titlebar-border-width  Titlebar border width */
+/* --titlebar-border-color  Titlebar border color */
+/* --titlebar-text-color  Titlebar text color */
+/* --titlebar-text-color-focused  Titlebar text color (focused window) */
+/* --titlebar-text-weight  Titlebar font weight */
+/* --header-height  Default height for frame elements */
+/* !SECTION Window frame ---------------------------------------------------------- */
+/* SECTION Workspace ------------------------------------------------------------- */
+/* --workspace-background-translucent  Background for translucent windows */
+/* !SECTION Workspace ------------------------------------------------------------- */
