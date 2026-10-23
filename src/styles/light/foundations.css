@@ -1,0 +1,83 @@
+.theme-light {
+
+  /*
+ --color-base-00
+ --color-base-05
+ --color-base-10
+ --color-base-20
+ --color-base-25
+ --color-base-30
+ --color-base-35
+ --color-base-40
+ --color-base-50
+ --color-base-60
+ --color-base-70
+ --color-base-100
+
+ --accent-h
+ --accent-s
+ --accent-l
+ */
+
+  --color-red:    var(--red40);
+  --color-orange: var(--orange40);
+  --color-yellow: var(--yellow40);
+  --color-green:  var(--green40);
+  --color-cyan:   var(--cyan40);
+  --color-blue:   var(--blue40);
+  --color-purple: var(--purple40);
+  --color-pink:   var(--pink40);
+
+  --background-primary:       var(--brown00);
+  --background-primary-alt:   var(--brown10);
+  --background-secondary:     var(--gray00);
+  --background-secondary-alt: var(--gray10);
+
+  --background-modifier-hover:        var(--brown10);
+  --background-modifier-active-hover: var(--brown20);
+
+  --background-modifier-border:       var(--gray20);
+  --background-modifier-border-hover: var(--gray30);
+  --background-modifier-border-focus: var(--gray40);
+
+  --background-modifier-error:        var(--red00);
+  --background-modifier-error-hover:  var(--red00);
+  --text-error:                       var(--red40);
+
+  --background-modifier-success:      var(--green00);
+  --text-success:                     var(--green50);
+
+  --background-modifier-message:      var(--gray10);
+
+  --background-modifier-form-field:   var(--white00);
+
+  --interactive-normal:               var(--gray10);
+  --interactive-hover:                var(--gray20);
+  --interactive-accent:               var(--green40);
+  --interactive-accent-hsl:           75, 9.64%, 32.55%;
+  --interactive-accent-hover:         var(--green50);
+
+  --text-normal:                      var(--gray70);
+  --text-muted:                       var(--gray60);
+  --text-faint:                       var(--gray50);
+
+  --text-on-accent:                   var(--white00);
+  --text-on-accent-inverted:          var(--green70);
+  --text-warning:                     var(--orange70);
+  --text-accent:                      var(--blue60);
+  --text-accent-hover:                var(--blue50);
+  --text-selection:                   var(--brown10);
+  --text-highlight-bg:                var(--yellow00);
+  --caret-color:                      var(--gray70);
+  --cursor:                           default;
+  --cursor-link:                      pointer;
+
+  --icon-color:         var(--gray70);
+  --icon-color-hover:   var(--gray90);
+  --icon-color-active:  var(--gray90);
+  --icon-color-focused: var(--gray90);
+
+  --bold-color:   var(--gray90);
+  --italic-color: var(--gray70);
+
+}
