@@ -1,13 +1,8 @@
 /**
- * This script makes it slightly easier to release new versions of your
- * theme. If you are not using Github Releases with your theme, or
- * you are not interested in automating the process, you can safely ignore
- * this script.
- *
  * Usage: `$ npm run version`
  *
- * This script will automatically add a new entry to the versions.json file for
- * the current version of your theme.
+ * This script will automatically add a new entry to the versions.json file for the current version of your
+ * theme.
  */
 
 import { readFileSync, writeFileSync } from "fs";

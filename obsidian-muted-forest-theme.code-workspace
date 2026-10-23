@@ -1,0 +1,76 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "Muted Forest Theme : Obsidian"
+    }
+  ],
+  "settings": {
+    "postcssense.cssPath": "src/styles/main.css",
+    "formate.enable": true,
+    "formate.additionalSpaces": 0,
+    "formate.verticalAlignProperties": true,
+    "formate.alignColon": false,
+    "[css]": {
+      "editor.suggest.insertMode": "replace",
+      "cSpell.fixSpellingWithRenameProvider": false,
+      "editor.defaultFormatter": "MikeBovenlander.formate",
+
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "csstools.postcss",
+      "smallcase.postcssense",
+      "bierner.color-info",
+      "MikeBovenlander.formate",
+      "bbugh.change-color-format",
+      "ExodiusStudios.comment-anchors",
+      "stylelint.vscode-stylelint"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [ ],
+    "compounds": [ ]
+  },
+  "mcp": {
+    "inputs": [ ],
+    "servers": {
+      "mcp-server-time": {
+        "command": "uvx",
+        "args": [
+          "mcp_server_time",
+          "--local-timezone=America/New_York"
+        ]
+      }
+    }
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "npm",
+        "script": "build:css",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [ ],
+        "label": "npm: build:css",
+        "detail": "postcss src/styles/main.css -o theme.css"
+      },
+      {
+        "type": "npm",
+        "script": "lint:css",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "problemMatcher": "$stylelint-compact",
+        "label": "Lint the theme source",
+        "detail": "stylelint"
+      }
+    ]
+  }
+}

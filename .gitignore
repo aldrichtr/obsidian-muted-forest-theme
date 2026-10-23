@@ -1,15 +1,12 @@
 # vscode
-.vscode 
+.vscode
 
-# Intellij
-*.iml
-.idea
+out/
 
-# npm
-node_modules
+dist/
 
-# Exclude sourcemaps
-*.map
+node_modules/
 
-# Exclude macOS Finder (System Explorer) View States
-.DS_Store
+package-lock.json
+
+theme-test-vault/

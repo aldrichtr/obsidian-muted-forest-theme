@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+
+
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: "0.2"
+language: en
+
+import:
+  - "~/.config/cspell/cspell.config.yaml"
+
+files:
+  - "**/*.md"
+  - "**/*.css"
+  - "**/*.mjs"
+  - "**/*.json"
+
+dictionaryDefinitions:
+  - name: theme-words
+    description: "Words specific to this theme project"
+    path: ".cspell/theme-words.txt"
+    addWords: true
+    scope: workspace
+
+dictionaries:
+  - theme-words

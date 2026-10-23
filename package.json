@@ -1,11 +1,26 @@
 {
     "name": "obsidian-muted-forest-theme",
-	"description": "A muted theme with colors from the forest",
+    "description": "A muted theme with colors from the forest",
     "version": "0.1.0",
-	"author": "Tim Aldrich",
-	"repository": "https://github.com/aldrichtr/obsidian-muted-forest-theme",
-	"scripts": {
-		"version": "node version-bump.mjs && git add manifest.json versions.json"
-	},
-	"devDependencies": {}
+    "type": "module",
+    "author": "Tim Aldrich",
+    "displayName": "Muted Forest Theme for Obsidian",
+    "license": "MIT",
+    "repository": "https://github.com/aldrichtr/obsidian-muted-forest-theme",
+    "scripts": {
+        "version": "node version-bump.mjs && git add manifest.json versions.json",
+        "build:css": "postcss src/styles/main.css -o theme.css",
+        "lint": "stylelint \"src/**/*.css\"",
+        "install:vault": "node install.mjs"
+    },
+    "devDependencies": {
+        "postcss": "8.5.31",
+        "postcss-cli": "^12.0.0",
+        "postcss-import": "17.0.1",
+        "postcss-nested": "^9.0.1",
+        "postcss-nested-import": "^1.3.0",
+        "stylelint": "^17.0.0",
+        "stylelint-config-obsidianmd": "^0.1.0",
+        "stylelint-order": "^8.1.2"
+    }
 }

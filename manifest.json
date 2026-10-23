@@ -1,7 +1,7 @@
 {
   "name": "MutedForest",
   "version": "0.1.0",
-  "minAppVersion": "0.8.0",
+  "minAppVersion": "0.13.0",
   "author": "Tim Aldrich",
   "authorUrl": "https://github.com/aldrichtr/obsidian-muted-forest-theme"
 }
