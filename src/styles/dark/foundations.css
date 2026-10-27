@@ -1,84 +1,85 @@
 .theme-dark {
 
-  /*
- --color-base-00
- --color-base-05
- --color-base-10
- --color-base-20
- --color-base-25
- --color-base-30
- --color-base-35
- --color-base-40
- --color-base-50
- --color-base-60
- --color-base-70
- --color-base-100
+  /* Obsidian neutral scale: 00 is the page-background end, 100 the text end. */
+  /* Kept in step with the explicit roles below. */
+  --color-base-00:   var(--base975);
+  --color-base-05:   var(--base975);
+  --color-base-10:   var(--base950);
+  --color-base-20:   var(--base900);
+  --color-base-25:   var(--base850);
+  --color-base-30:   var(--base800);
+  --color-base-35:   var(--base700);
+  --color-base-40:   var(--base500);
+  --color-base-50:   var(--base400);
+  --color-base-60:   var(--base300);
+  --color-base-70:   var(--yellow200);
+  --color-base-100:  var(--yellow150);
 
- --accent-h
- --accent-s
- --accent-l
- */
+  /* Accent: green400 as HSL numbers (Obsidian builds --color-accent from these). */
+  /* Users can override it under Settings > Appearance. */
+  --accent-h: 111.5;
+  --accent-s: 21.2%;
+  --accent-l: 47.8%;
 
-  --color-red:    var(--red40);
-  --color-orange: var(--orange40);
-  --color-yellow: var(--yellow40);
-  --color-green:  var(--green40);
-  --color-cyan:   var(--cyan40);
-  --color-blue:   var(--blue40);
-  --color-purple: var(--purple40);
-  --color-pink:   var(--pink40);
+  --color-red:    var(--red400);
+  --color-orange: var(--orange400);
+  --color-yellow: var(--brown400);
+  --color-green:  var(--green400);
+  --color-cyan:   var(--cyan400);
+  --color-blue:   var(--blue400);
+  --color-purple: var(--purple400);
+  --color-pink:   var(--pink400);
 
-  --background-primary:       var(--green70);
-  --background-primary-alt:   var(--green60);
-  --background-secondary:     var(--gray70);
-  --background-secondary-alt: var(--gray60);
+  --background-primary:       var(--base975);
+  --background-primary-alt:   var(--base950);
+  --background-secondary:     var(--base950);
+  --background-secondary-alt: var(--base900);
 
-  --background-modifier-hover:        var(--green60);
-  --background-modifier-active-hover: var(--green50);
+  --background-modifier-hover:        var(--base900);
+  --background-modifier-active-hover: var(--base850);
 
-  --background-modifier-border:       var(--green40);
-  --background-modifier-border-hover: var(--green60);
-  --background-modifier-border-focus: var(--green60);
+  --background-modifier-border:       var(--base800);
+  --background-modifier-border-hover: var(--base700);
+  --background-modifier-border-focus: var(--base400);
 
-  --background-modifier-error:        var(--red40);
-  --background-modifier-error-hover:  var(--red30);
-  --text-error:                       var(--red40);
+  --background-modifier-error:        var(--red600);
+  --background-modifier-error-hover:  var(--red500);
+  --text-error:                       var(--red150);
 
 
-  --background-modifier-success:      var(--green40);
-  --text-success:                     var(--green40);
+  --background-modifier-success:      var(--green600);
+  --text-success:                     var(--green150);
 
-  --background-modifier-message:      var(--gray70);
+  --background-modifier-message:      var(--base850);
 
-  --background-modifier-form-field:   var(--gray80);
+  --background-modifier-form-field:   var(--base900);
 
-  --interactive-normal:               var(--gray70);
-  --interactive-hover:                var(--gray60);
-  --interactive-accent:               var(--green40);
-  --interactive-accent-hsl:           75, 9.64%, 32.55%;
-  --interactive-accent-hover:         var(--green30);
+  --interactive-normal:               var(--base850);
+  --interactive-hover:                var(--base800);
+  --interactive-accent:               var(--green600);
+  --interactive-accent-hover:         var(--green500);
 
-  --text-normal:                      var(--yellow10);
-  --text-muted:                       var(--yellow20);
-  --text-faint:                       var(--gray30);
+  --text-normal:                      var(--yellow150);
+  --text-muted:                       var(--yellow200);
+  --text-faint:                       var(--base400);
 
-  --text-on-accent:                   var(--yellow00);
-  --text-on-accent-inverted:          var(--green70);
-  --text-warning:                     var(--orange50);
-  --text-accent:                      var(--cyan00);
-  --text-accent-hover:                var(--white00);
-  --text-selection:                   var(--green50);
-  --text-highlight-bg:                var(--brown50);
-  --caret-color:                      var(--yellow10);
+  --text-on-accent:                   var(--base25);
+  --text-on-accent-inverted:          var(--base975);
+  --text-warning:                     var(--orange150);
+  --text-accent:                      var(--blue150);
+  --text-accent-hover:                var(--blue200);
+  --text-selection:                   var(--base800);
+  --text-highlight-bg:                var(--brown900);
+  --caret-color:                      var(--yellow150);
   --cursor:                           default;
   --cursor-link:                      pointer;
 
-  --icon-color:         var(--yellow00);
-  --icon-color-hover:   var(--white00);
-  --icon-color-active:  var(--white00);
-  --icon-color-focused: var(--white00);
+  --icon-color:         var(--yellow150);
+  --icon-color-hover:   var(--yellow100);
+  --icon-color-active:  var(--yellow100);
+  --icon-color-focused: var(--yellow100);
 
-  --bold-color:   var(--yellow00);
-  --italic-color: var(--yellow10);
+  --bold-color:   var(--yellow100);
+  --italic-color: var(--yellow150);
 
 }

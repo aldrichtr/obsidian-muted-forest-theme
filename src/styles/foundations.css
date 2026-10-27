@@ -1,7 +1,7 @@
 @import url('./dark/foundations.css');
 @import url('./light/foundations.css');
 
-.body {
+body {
 
   --border-s: 1px;
   --border-m: 2px;

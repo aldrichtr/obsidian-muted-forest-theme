@@ -1,83 +1,109 @@
 /* *********************************************************************************************************
  * palette: Define the colors used in Muted Forest Theme
  * ********************************************************************************************************/
-.body {
+:root {
 
-  /* SECTION Greens */
-  --green00: hsl(66.67deg 18.88 71.96);
-  --green10: hsl(67.50deg 12.24 61.57);
-  --green20: hsl(68.57deg 8.50 51.57);
-  --green30: hsl(70.00deg 8.41 41.96);
-  --green40: hsl(75.00deg 9.64 32.55);
-  --green50: hsl(78.46deg 10.74 23.73);
-  --green60: hsl(78.00deg 12.82 15.29);
-  --green70: hsl(80.00deg 24.32 7.25);
+  /* SECTION Base */
+  /* One ramp for both modes: sage-tan (light end) to olive (dark end). */
+  --base25:  oklch(96% 0.018 104deg);
+  --base50:  oklch(93% 0.022 105deg);
+  --base100: oklch(90% 0.021 106deg);
+  --base150: oklch(86% 0.019 107deg);
+  --base200: oklch(81% 0.017 108deg);
+  --base300: oklch(72% 0.013 110deg);
+  --base400: oklch(62% 0.013 113deg);
+  --base500: oklch(54% 0.012 115deg);
+  --base600: oklch(48% 0.012 116deg);
+  --base700: oklch(36% 0.012 119deg);
+  --base800: oklch(30% 0.015 120deg);
+  --base850: oklch(27% 0.017 121deg);
+  --base900: oklch(24% 0.018 122deg);
+  --base950: oklch(21% 0.018 123deg);
+  --base975: oklch(18% 0.017 123deg);
   /* !SECTION */
 
-  /* SECTION Browns */
-  --brown00: hsl(44.57deg 25.18 72.75);
-  --brown10: hsl(46.45deg 16.06 62.16);
-  --brown20: hsl(46.67deg 11.02 51.96);
-  --brown30: hsl(46.96deg 10.70 42.16);
-  --brown40: hsl(45.00deg 11.90 32.94);
-  --brown50: hsl(45.00deg 13.12 23.92);
-  --brown60: hsl(46.15deg 16.46 15.49);
-  --brown70: hsl(46.15deg 35.13 7.25);
+  /* SECTION Yellow */
+  /* Light end of the warm ramp; brown continues it from 300. Same lightness columns as base. */
+  /* yellow50 is the light-mode highlight surface. */
+  --yellow50:  oklch(93% 0.045 98deg);
+  --yellow100: oklch(90% 0.040 95deg);
+  --yellow150: oklch(86% 0.040 95deg);
+  --yellow200: oklch(81% 0.037 93deg);
   /* !SECTION */
 
-  /* SECTION Blues */
-  --blue00: hsl(200.00deg 40.16 75.10);
-  --blue10: hsl(201.33deg 24.86 64.51);
-  --blue20: hsl(201.00deg 17.09 54.12);
-  --blue30: hsl(201.18deg 15.18 43.92);
-  --blue40: hsl(200.00deg 17.24 34.12);
-  --blue50: hsl(201.60deg 19.68 24.90);
-  --blue60: hsl(198.95deg 22.89 16.27);
-  --blue70: hsl(198.75deg 40.00 7.84);
+  /* SECTION Brown */
+  /* Continues the yellow ramp: brown300 is the original brown10. Hue warms as it darkens. */
+  --brown300: oklch(72% 0.034 94deg);
+  --brown400: oklch(62% 0.042 76deg);
+  --brown500: oklch(54% 0.046 68deg);
+  --brown600: oklch(48% 0.046 62deg);
+  --brown700: oklch(36% 0.042 58deg);
+  --brown800: oklch(30% 0.036 56deg);
+  --brown900: oklch(24% 0.030 55deg);
   /* !SECTION */
 
-  /* SECTION Grays */
-  --gray00: hsl(0.00deg 0.00 76.47);
-  --gray10: hsl(0.00deg 0.00 67.84);
-  --gray20: hsl(0.00deg 0.00 59.61);
-  --gray30: hsl(0.00deg 0.00 51.77);
-  --gray40: hsl(0.00deg 0.00 43.92);
-  --gray50: hsl(0.00deg 0.00 36.47);
-  --gray60: hsl(0.00deg 0.00 29.41);
-  --gray70: hsl(0.00deg 0.00 22.35);
-  --gray80: hsl(0.00deg 0.00 15.69);
-  --gray90: hsl(0.00deg 0.00 9.41);
+  /* SECTION Blue */
+  /* blue400 is the original blue20, blue500 is blue30. */
+  --blue50:  oklch(93% 0.025 230deg);
+  --blue100: oklch(90% 0.032 231deg);
+  --blue150: oklch(86% 0.035 232deg);
+  --blue200: oklch(81% 0.037 232deg);
+  --blue400: oklch(62% 0.036 232deg);
+  --blue500: oklch(54% 0.034 232deg);
+  --blue600: oklch(48% 0.034 233deg);
+  --blue900: oklch(24% 0.028 235deg);
   /* !SECTION */
 
+  /* SECTION Accents */
+  /* Shared columns with base; accent chroma tier (higher than identity ramps). */
+  /* Roles: 150 dark text, 200 dark hover, 400 dark UI, 500 light UI, 600 light text, 50/900 surfaces. */
+  --red50:  oklch(93% 0.032 28deg);
+  --red150: oklch(86% 0.060 29deg);
+  --red200: oklch(81% 0.062 29deg);
+  --red400: oklch(62% 0.075 31deg);
+  --red500: oklch(54% 0.075 32deg);
+  --red600: oklch(48% 0.070 33deg);
+  --red900: oklch(24% 0.045 35deg);
 
-  --yellow00: hsl(48.46deg 100.00 94.90);
-  --yellow10: hsl(50.40deg 15.92 69.22);
-  --yellow20: hsl(50.40deg 12.56 60.98);
-  --yellow30: hsl(50.00deg 10.00 52.94);
-  --yellow40: hsl(49.57deg 9.96 45.29);
-  --yellow50: hsl(51.82deg 11.46 37.65);
+  --orange50:  oklch(93% 0.041 62deg);
+  --orange150: oklch(86% 0.075 62deg);
+  --orange200: oklch(81% 0.077 61deg);
+  --orange400: oklch(62% 0.094 60deg);
+  --orange500: oklch(54% 0.094 60deg);
+  --orange600: oklch(48% 0.088 59deg);
+  --orange900: oklch(24% 0.052 58deg);
 
-  --black00: hsl(0deg 0 34);
-  --black40: hsl(0deg 0 1);
+  --pink50:  oklch(93% 0.039 347deg);
+  --pink150: oklch(86% 0.066 347deg);
+  --pink200: oklch(81% 0.068 347deg);
+  --pink400: oklch(62% 0.083 346deg);
+  --pink500: oklch(54% 0.083 346deg);
+  --pink600: oklch(48% 0.077 346deg);
+  --pink900: oklch(24% 0.050 345deg);
 
-  --white00: hsl(0deg 0 94.9);
-  --white40: hsl(0deg 0 74.9);
+  --purple50:  oklch(93% 0.036 302deg);
+  --purple150: oklch(86% 0.066 302deg);
+  --purple200: oklch(81% 0.068 301deg);
+  --purple400: oklch(62% 0.083 300deg);
+  --purple500: oklch(54% 0.083 300deg);
+  --purple600: oklch(48% 0.077 299deg);
+  --purple900: oklch(24% 0.050 298deg);
 
-  --orange00: hsl(32deg 82% 70%);
-  --orange40: hsl(32deg 81% 58%);
-  --orange50: hsl(30deg 59% 51%);
-  --orange70: hsl(30deg 59% 27%);
+  --cyan50:  oklch(93% 0.035 180deg);
+  --cyan150: oklch(86% 0.060 180deg);
+  --cyan200: oklch(81% 0.062 180deg);
+  --cyan400: oklch(62% 0.075 181deg);
+  --cyan500: oklch(54% 0.075 181deg);
+  --cyan600: oklch(48% 0.070 181deg);
+  --cyan900: oklch(24% 0.039 182deg);
 
-  --pink00: hsl(0deg 58% 82%);
-  --pink40: hsl(344deg 40 57);
-
-  --red00: hsl(347deg 32 63);
-  --red30: hsl(345deg 31 41);
-  --red40: hsl(344deg 31 34);
-
-  --cyan00: hsl(187.2deg 60.6 73.1);
-  --cyan40: hsl(187.1deg 41.5 40.2);
-
-  --purple00: hsl(268deg 48.4 75.7);
-  --purple40: hsl(267.3deg 24.4 44.1);
+  /* green: success and positive states. Clearly green, between the olive base and cyan. */
+  --green50:  oklch(93% 0.042 140deg);
+  --green150: oklch(86% 0.072 140deg);
+  --green200: oklch(81% 0.074 140deg);
+  --green400: oklch(62% 0.090 141deg);
+  --green500: oklch(54% 0.090 141deg);
+  --green600: oklch(48% 0.084 141deg);
+  --green900: oklch(24% 0.054 142deg);
+  /* !SECTION */
 }

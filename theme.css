@@ -15,254 +15,282 @@ settings:
 *//* *********************************************************************************************************
  * palette: Define the colors used in Muted Forest Theme
  * ********************************************************************************************************/
-.body {
+:root {
 
-  /* SECTION Greens */
-  --green00: hsl(66.67deg 18.88 71.96);
-  --green10: hsl(67.50deg 12.24 61.57);
-  --green20: hsl(68.57deg 8.50 51.57);
-  --green30: hsl(70.00deg 8.41 41.96);
-  --green40: hsl(75.00deg 9.64 32.55);
-  --green50: hsl(78.46deg 10.74 23.73);
-  --green60: hsl(78.00deg 12.82 15.29);
-  --green70: hsl(80.00deg 24.32 7.25);
+  /* SECTION Base */
+  /* One ramp for both modes: sage-tan (light end) to olive (dark end). */
+  --base25:  oklch(96% 0.018 104deg);
+  --base50:  oklch(93% 0.022 105deg);
+  --base100: oklch(90% 0.021 106deg);
+  --base150: oklch(86% 0.019 107deg);
+  --base200: oklch(81% 0.017 108deg);
+  --base300: oklch(72% 0.013 110deg);
+  --base400: oklch(62% 0.013 113deg);
+  --base500: oklch(54% 0.012 115deg);
+  --base600: oklch(48% 0.012 116deg);
+  --base700: oklch(36% 0.012 119deg);
+  --base800: oklch(30% 0.015 120deg);
+  --base850: oklch(27% 0.017 121deg);
+  --base900: oklch(24% 0.018 122deg);
+  --base950: oklch(21% 0.018 123deg);
+  --base975: oklch(18% 0.017 123deg);
   /* !SECTION */
 
-  /* SECTION Browns */
-  --brown00: hsl(44.57deg 25.18 72.75);
-  --brown10: hsl(46.45deg 16.06 62.16);
-  --brown20: hsl(46.67deg 11.02 51.96);
-  --brown30: hsl(46.96deg 10.70 42.16);
-  --brown40: hsl(45.00deg 11.90 32.94);
-  --brown50: hsl(45.00deg 13.12 23.92);
-  --brown60: hsl(46.15deg 16.46 15.49);
-  --brown70: hsl(46.15deg 35.13 7.25);
+  /* SECTION Yellow */
+  /* Light end of the warm ramp; brown continues it from 300. Same lightness columns as base. */
+  /* yellow50 is the light-mode highlight surface. */
+  --yellow50:  oklch(93% 0.045 98deg);
+  --yellow100: oklch(90% 0.040 95deg);
+  --yellow150: oklch(86% 0.040 95deg);
+  --yellow200: oklch(81% 0.037 93deg);
   /* !SECTION */
 
-  /* SECTION Blues */
-  --blue00: hsl(200.00deg 40.16 75.10);
-  --blue10: hsl(201.33deg 24.86 64.51);
-  --blue20: hsl(201.00deg 17.09 54.12);
-  --blue30: hsl(201.18deg 15.18 43.92);
-  --blue40: hsl(200.00deg 17.24 34.12);
-  --blue50: hsl(201.60deg 19.68 24.90);
-  --blue60: hsl(198.95deg 22.89 16.27);
-  --blue70: hsl(198.75deg 40.00 7.84);
+  /* SECTION Brown */
+  /* Continues the yellow ramp: brown300 is the original brown10. Hue warms as it darkens. */
+  --brown300: oklch(72% 0.034 94deg);
+  --brown400: oklch(62% 0.042 76deg);
+  --brown500: oklch(54% 0.046 68deg);
+  --brown600: oklch(48% 0.046 62deg);
+  --brown700: oklch(36% 0.042 58deg);
+  --brown800: oklch(30% 0.036 56deg);
+  --brown900: oklch(24% 0.030 55deg);
   /* !SECTION */
 
-  /* SECTION Grays */
-  --gray00: hsl(0.00deg 0.00 76.47);
-  --gray10: hsl(0.00deg 0.00 67.84);
-  --gray20: hsl(0.00deg 0.00 59.61);
-  --gray30: hsl(0.00deg 0.00 51.77);
-  --gray40: hsl(0.00deg 0.00 43.92);
-  --gray50: hsl(0.00deg 0.00 36.47);
-  --gray60: hsl(0.00deg 0.00 29.41);
-  --gray70: hsl(0.00deg 0.00 22.35);
-  --gray80: hsl(0.00deg 0.00 15.69);
-  --gray90: hsl(0.00deg 0.00 9.41);
+  /* SECTION Blue */
+  /* blue400 is the original blue20, blue500 is blue30. */
+  --blue50:  oklch(93% 0.025 230deg);
+  --blue100: oklch(90% 0.032 231deg);
+  --blue150: oklch(86% 0.035 232deg);
+  --blue200: oklch(81% 0.037 232deg);
+  --blue400: oklch(62% 0.036 232deg);
+  --blue500: oklch(54% 0.034 232deg);
+  --blue600: oklch(48% 0.034 233deg);
+  --blue900: oklch(24% 0.028 235deg);
   /* !SECTION */
 
+  /* SECTION Accents */
+  /* Shared columns with base; accent chroma tier (higher than identity ramps). */
+  /* Roles: 150 dark text, 200 dark hover, 400 dark UI, 500 light UI, 600 light text, 50/900 surfaces. */
+  --red50:  oklch(93% 0.032 28deg);
+  --red150: oklch(86% 0.060 29deg);
+  --red200: oklch(81% 0.062 29deg);
+  --red400: oklch(62% 0.075 31deg);
+  --red500: oklch(54% 0.075 32deg);
+  --red600: oklch(48% 0.070 33deg);
+  --red900: oklch(24% 0.045 35deg);
 
-  --yellow00: hsl(48.46deg 100.00 94.90);
-  --yellow10: hsl(50.40deg 15.92 69.22);
-  --yellow20: hsl(50.40deg 12.56 60.98);
-  --yellow30: hsl(50.00deg 10.00 52.94);
-  --yellow40: hsl(49.57deg 9.96 45.29);
-  --yellow50: hsl(51.82deg 11.46 37.65);
+  --orange50:  oklch(93% 0.041 62deg);
+  --orange150: oklch(86% 0.075 62deg);
+  --orange200: oklch(81% 0.077 61deg);
+  --orange400: oklch(62% 0.094 60deg);
+  --orange500: oklch(54% 0.094 60deg);
+  --orange600: oklch(48% 0.088 59deg);
+  --orange900: oklch(24% 0.052 58deg);
 
-  --black00: hsl(0deg 0 34);
-  --black40: hsl(0deg 0 1);
+  --pink50:  oklch(93% 0.039 347deg);
+  --pink150: oklch(86% 0.066 347deg);
+  --pink200: oklch(81% 0.068 347deg);
+  --pink400: oklch(62% 0.083 346deg);
+  --pink500: oklch(54% 0.083 346deg);
+  --pink600: oklch(48% 0.077 346deg);
+  --pink900: oklch(24% 0.050 345deg);
 
-  --white00: hsl(0deg 0 94.9);
-  --white40: hsl(0deg 0 74.9);
+  --purple50:  oklch(93% 0.036 302deg);
+  --purple150: oklch(86% 0.066 302deg);
+  --purple200: oklch(81% 0.068 301deg);
+  --purple400: oklch(62% 0.083 300deg);
+  --purple500: oklch(54% 0.083 300deg);
+  --purple600: oklch(48% 0.077 299deg);
+  --purple900: oklch(24% 0.050 298deg);
 
-  --orange00: hsl(32deg 82% 70%);
-  --orange40: hsl(32deg 81% 58%);
-  --orange50: hsl(30deg 59% 51%);
-  --orange70: hsl(30deg 59% 27%);
+  --cyan50:  oklch(93% 0.035 180deg);
+  --cyan150: oklch(86% 0.060 180deg);
+  --cyan200: oklch(81% 0.062 180deg);
+  --cyan400: oklch(62% 0.075 181deg);
+  --cyan500: oklch(54% 0.075 181deg);
+  --cyan600: oklch(48% 0.070 181deg);
+  --cyan900: oklch(24% 0.039 182deg);
 
-  --pink00: hsl(0deg 58% 82%);
-  --pink40: hsl(344deg 40 57);
-
-  --red00: hsl(347deg 32 63);
-  --red30: hsl(345deg 31 41);
-  --red40: hsl(344deg 31 34);
-
-  --cyan00: hsl(187.2deg 60.6 73.1);
-  --cyan40: hsl(187.1deg 41.5 40.2);
-
-  --purple00: hsl(268deg 48.4 75.7);
-  --purple40: hsl(267.3deg 24.4 44.1);
+  /* green: success and positive states. Clearly green, between the olive base and cyan. */
+  --green50:  oklch(93% 0.042 140deg);
+  --green150: oklch(86% 0.072 140deg);
+  --green200: oklch(81% 0.074 140deg);
+  --green400: oklch(62% 0.090 141deg);
+  --green500: oklch(54% 0.090 141deg);
+  --green600: oklch(48% 0.084 141deg);
+  --green900: oklch(24% 0.054 142deg);
+  /* !SECTION */
 }
 .theme-dark {
 
-  /*
- --color-base-00
- --color-base-05
- --color-base-10
- --color-base-20
- --color-base-25
- --color-base-30
- --color-base-35
- --color-base-40
- --color-base-50
- --color-base-60
- --color-base-70
- --color-base-100
+  /* Obsidian neutral scale: 00 is the page-background end, 100 the text end. */
+  /* Kept in step with the explicit roles below. */
+  --color-base-00:   var(--base975);
+  --color-base-05:   var(--base975);
+  --color-base-10:   var(--base950);
+  --color-base-20:   var(--base900);
+  --color-base-25:   var(--base850);
+  --color-base-30:   var(--base800);
+  --color-base-35:   var(--base700);
+  --color-base-40:   var(--base500);
+  --color-base-50:   var(--base400);
+  --color-base-60:   var(--base300);
+  --color-base-70:   var(--yellow200);
+  --color-base-100:  var(--yellow150);
 
- --accent-h
- --accent-s
- --accent-l
- */
+  /* Accent: green400 as HSL numbers (Obsidian builds --color-accent from these). */
+  /* Users can override it under Settings > Appearance. */
+  --accent-h: 111.5;
+  --accent-s: 21.2%;
+  --accent-l: 47.8%;
 
-  --color-red:    var(--red40);
-  --color-orange: var(--orange40);
-  --color-yellow: var(--yellow40);
-  --color-green:  var(--green40);
-  --color-cyan:   var(--cyan40);
-  --color-blue:   var(--blue40);
-  --color-purple: var(--purple40);
-  --color-pink:   var(--pink40);
+  --color-red:    var(--red400);
+  --color-orange: var(--orange400);
+  --color-yellow: var(--brown400);
+  --color-green:  var(--green400);
+  --color-cyan:   var(--cyan400);
+  --color-blue:   var(--blue400);
+  --color-purple: var(--purple400);
+  --color-pink:   var(--pink400);
 
-  --background-primary:       var(--green70);
-  --background-primary-alt:   var(--green60);
-  --background-secondary:     var(--gray70);
-  --background-secondary-alt: var(--gray60);
+  --background-primary:       var(--base975);
+  --background-primary-alt:   var(--base950);
+  --background-secondary:     var(--base950);
+  --background-secondary-alt: var(--base900);
 
-  --background-modifier-hover:        var(--green60);
-  --background-modifier-active-hover: var(--green50);
+  --background-modifier-hover:        var(--base900);
+  --background-modifier-active-hover: var(--base850);
 
-  --background-modifier-border:       var(--green40);
-  --background-modifier-border-hover: var(--green60);
-  --background-modifier-border-focus: var(--green60);
+  --background-modifier-border:       var(--base800);
+  --background-modifier-border-hover: var(--base700);
+  --background-modifier-border-focus: var(--base400);
 
-  --background-modifier-error:        var(--red40);
-  --background-modifier-error-hover:  var(--red30);
-  --text-error:                       var(--red40);
+  --background-modifier-error:        var(--red600);
+  --background-modifier-error-hover:  var(--red500);
+  --text-error:                       var(--red150);
 
 
-  --background-modifier-success:      var(--green40);
-  --text-success:                     var(--green40);
+  --background-modifier-success:      var(--green600);
+  --text-success:                     var(--green150);
 
-  --background-modifier-message:      var(--gray70);
+  --background-modifier-message:      var(--base850);
 
-  --background-modifier-form-field:   var(--gray80);
+  --background-modifier-form-field:   var(--base900);
 
-  --interactive-normal:               var(--gray70);
-  --interactive-hover:                var(--gray60);
-  --interactive-accent:               var(--green40);
-  --interactive-accent-hsl:           75, 9.64%, 32.55%;
-  --interactive-accent-hover:         var(--green30);
+  --interactive-normal:               var(--base850);
+  --interactive-hover:                var(--base800);
+  --interactive-accent:               var(--green600);
+  --interactive-accent-hover:         var(--green500);
 
-  --text-normal:                      var(--yellow10);
-  --text-muted:                       var(--yellow20);
-  --text-faint:                       var(--gray30);
+  --text-normal:                      var(--yellow150);
+  --text-muted:                       var(--yellow200);
+  --text-faint:                       var(--base400);
 
-  --text-on-accent:                   var(--yellow00);
-  --text-on-accent-inverted:          var(--green70);
-  --text-warning:                     var(--orange50);
-  --text-accent:                      var(--cyan00);
-  --text-accent-hover:                var(--white00);
-  --text-selection:                   var(--green50);
-  --text-highlight-bg:                var(--brown50);
-  --caret-color:                      var(--yellow10);
+  --text-on-accent:                   var(--base25);
+  --text-on-accent-inverted:          var(--base975);
+  --text-warning:                     var(--orange150);
+  --text-accent:                      var(--blue150);
+  --text-accent-hover:                var(--blue200);
+  --text-selection:                   var(--base800);
+  --text-highlight-bg:                var(--brown900);
+  --caret-color:                      var(--yellow150);
   --cursor:                           default;
   --cursor-link:                      pointer;
 
-  --icon-color:         var(--yellow00);
-  --icon-color-hover:   var(--white00);
-  --icon-color-active:  var(--white00);
-  --icon-color-focused: var(--white00);
+  --icon-color:         var(--yellow150);
+  --icon-color-hover:   var(--yellow100);
+  --icon-color-active:  var(--yellow100);
+  --icon-color-focused: var(--yellow100);
 
-  --bold-color:   var(--yellow00);
-  --italic-color: var(--yellow10);
+  --bold-color:   var(--yellow100);
+  --italic-color: var(--yellow150);
 
 }
 .theme-light {
 
-  /*
- --color-base-00
- --color-base-05
- --color-base-10
- --color-base-20
- --color-base-25
- --color-base-30
- --color-base-35
- --color-base-40
- --color-base-50
- --color-base-60
- --color-base-70
- --color-base-100
+  /* Obsidian neutral scale: 00 is the page-background end, 100 the text end. */
+  /* Kept in step with the explicit roles below. */
+  --color-base-00:   var(--base50);
+  --color-base-05:   var(--base50);
+  --color-base-10:   var(--base100);
+  --color-base-20:   var(--base100);
+  --color-base-25:   var(--base150);
+  --color-base-30:   var(--base150);
+  --color-base-35:   var(--base200);
+  --color-base-40:   var(--base300);
+  --color-base-50:   var(--base400);
+  --color-base-60:   var(--base500);
+  --color-base-70:   var(--base600);
+  --color-base-100:  var(--base700);
 
- --accent-h
- --accent-s
- --accent-l
- */
+  /* Accent: green600 as HSL numbers (Obsidian builds --color-accent from these). */
+  /* Users can override it under Settings > Appearance. */
+  --accent-h: 111.6;
+  --accent-s: 27.8%;
+  --accent-l: 32.3%;
 
-  --color-red:    var(--red40);
-  --color-orange: var(--orange40);
-  --color-yellow: var(--yellow40);
-  --color-green:  var(--green40);
-  --color-cyan:   var(--cyan40);
-  --color-blue:   var(--blue40);
-  --color-purple: var(--purple40);
-  --color-pink:   var(--pink40);
+  --color-red:    var(--red600);
+  --color-orange: var(--orange600);
+  --color-yellow: var(--brown600);
+  --color-green:  var(--green600);
+  --color-cyan:   var(--cyan600);
+  --color-blue:   var(--blue600);
+  --color-purple: var(--purple600);
+  --color-pink:   var(--pink600);
 
-  --background-primary:       var(--brown00);
-  --background-primary-alt:   var(--brown10);
-  --background-secondary:     var(--gray00);
-  --background-secondary-alt: var(--gray10);
+  --background-primary:       var(--base50);
+  --background-primary-alt:   var(--base25);
+  --background-secondary:     var(--base100);
+  --background-secondary-alt: var(--base50);
 
-  --background-modifier-hover:        var(--brown10);
-  --background-modifier-active-hover: var(--brown20);
+  --background-modifier-hover:        var(--base150);
+  --background-modifier-active-hover: var(--base200);
 
-  --background-modifier-border:       var(--gray20);
-  --background-modifier-border-hover: var(--gray30);
-  --background-modifier-border-focus: var(--gray40);
+  --background-modifier-border:       var(--base150);
+  --background-modifier-border-hover: var(--base200);
+  --background-modifier-border-focus: var(--base500);
 
-  --background-modifier-error:        var(--red00);
-  --background-modifier-error-hover:  var(--red00);
-  --text-error:                       var(--red40);
+  --background-modifier-error:        var(--red600);
+  --background-modifier-error-hover:  var(--red500);
+  --text-error:                       var(--red600);
 
-  --background-modifier-success:      var(--green00);
-  --text-success:                     var(--green50);
+  --background-modifier-success:      var(--green600);
+  --text-success:                     var(--green600);
 
-  --background-modifier-message:      var(--gray10);
+  --background-modifier-message:      var(--base150);
 
-  --background-modifier-form-field:   var(--white00);
+  --background-modifier-form-field:   var(--base25);
 
-  --interactive-normal:               var(--gray10);
-  --interactive-hover:                var(--gray20);
-  --interactive-accent:               var(--green40);
-  --interactive-accent-hsl:           75, 9.64%, 32.55%;
-  --interactive-accent-hover:         var(--green50);
+  --interactive-normal:               var(--base150);
+  --interactive-hover:                var(--base200);
+  --interactive-accent:               var(--green600);
+  --interactive-accent-hover:         var(--green500);
 
-  --text-normal:                      var(--gray70);
-  --text-muted:                       var(--gray60);
-  --text-faint:                       var(--gray50);
+  --text-normal:                      var(--base700);
+  --text-muted:                       var(--base600);
+  --text-faint:                       var(--base400);
 
-  --text-on-accent:                   var(--white00);
-  --text-on-accent-inverted:          var(--green70);
-  --text-warning:                     var(--orange70);
-  --text-accent:                      var(--blue60);
-  --text-accent-hover:                var(--blue50);
-  --text-selection:                   var(--brown10);
-  --text-highlight-bg:                var(--yellow00);
-  --caret-color:                      var(--gray70);
+  --text-on-accent:                   var(--base25);
+  --text-on-accent-inverted:          var(--base975);
+  --text-warning:                     var(--orange600);
+  --text-accent:                      var(--blue600);
+  --text-accent-hover:                var(--blue900);
+  --text-selection:                   var(--base200);
+  --text-highlight-bg:                var(--yellow50);
+  --caret-color:                      var(--base700);
   --cursor:                           default;
   --cursor-link:                      pointer;
 
-  --icon-color:         var(--gray70);
-  --icon-color-hover:   var(--gray90);
-  --icon-color-active:  var(--gray90);
-  --icon-color-focused: var(--gray90);
+  --icon-color:         var(--base700);
+  --icon-color-hover:   var(--base800);
+  --icon-color-active:  var(--base800);
+  --icon-color-focused: var(--base800);
 
-  --bold-color:   var(--gray90);
-  --italic-color: var(--gray70);
+  --bold-color:   var(--base800);
+  --italic-color: var(--base700);
 
 }
-.body {
+body {
 
   --border-s: 1px;
   --border-m: 2px;
