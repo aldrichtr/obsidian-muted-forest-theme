@@ -37,6 +37,24 @@ The recommended size is 512x288.
 
 To have your theme included in the Theme Gallery, you will need to submit a Pull Request to [`obsidianmd/obsidian-releases`](https://github.com/obsidianmd/obsidian-releases#community-theme).
 
+## Testing locally in a vault
+
+To try the theme out while developing, build it and install the compiled `theme.css` and `manifest.json` into the local test vault:
+
+```sh
+npm run build:css
+npm run install:theme
+```
+
+This will:
+
+1. Clone `community-archive/theme-dev-vault` into `theme-test-vault/` (using the GitHub CLI) if that folder does not exist yet.
+2. Copy `manifest.json` and `theme.css` into `theme-test-vault/.obsidian/themes/<ThemeName>/`, where `<ThemeName>` comes from the `name` field in `manifest.json`.
+
+`install:theme` does not rebuild the theme, so run `npm run build:css` first after changing anything under `src/styles/`.
+
+After running it, open the vault in Obsidian and select the theme from **Settings > Appearance > Themes**.
+
 ## Releasing Versions _(Optional)_
 
 If your theme is getting more and more complex, you might want to start thinking about how your theme will stay compatible with different versions of Obsidian. Introduced in v0.16 of Obsidian, themes support [Github Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). This means that you can specify which versions of your theme are compatible with which versions of Obsidian.

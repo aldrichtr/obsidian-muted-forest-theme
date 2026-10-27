@@ -71,16 +71,20 @@ Run from the repo root.
 
 - Build the theme:        npm run build:css
   (postcss src/styles/main.css -o theme.css)
-- Lint CSS:               npm run lint
-  (stylelint "src/**/*.css")
-- Install into a vault:   npm run install:vault -- "C:\path\to\TestVault"
-  or set OBSIDIAN_TEST_VAULT once, then: npm run install:vault
-- Version bump:           npm run version
+- Lint CSS:               npm run lint:css
+  (stylelint "src/**/*.css" --cache-location ./.cache/ --cache-strategy content)
+- Remove the build:       npm run clean:css
+- Install into the vault: npm run install:theme
+- Version bump:           npm version <x.y.z> --no-git-tag-version
+  (runs the "version" lifecycle script, version-bump.mjs)
 
-install:vault (install.mjs) rebuilds theme.css if it is missing or older than any
-file under src/styles/, then copies manifest.json and theme.css into
-<vault>/.obsidian/themes/<ThemeName>/ where <ThemeName> is the "name" field in
-manifest.json.
+install:theme (install.mjs) clones community-archive/theme-dev-vault into
+theme-test-vault/ (via gh) if that folder is missing, then copies manifest.json and
+theme.css into theme-test-vault/.obsidian/themes/<ThemeName>/ where <ThemeName> is
+the "name" field in manifest.json. It does not rebuild; run build:css first.
+
+Stylelint reads only `cache` from stylelint.config.mjs. cacheLocation and
+cacheStrategy are CLI/API options, so they live on the lint:css command line.
 
 ## Project structure
 
@@ -92,7 +96,7 @@ obsidian-muted-forest-theme/
 +-- package.json              <- scripts + devDependencies
 +-- postcss.config.mjs        <- build pipeline (import + settings-inject)
 +-- stylelint.config.mjs      <- lint rules
-+-- install.mjs               <- build-if-stale + copy into a test vault
++-- install.mjs               <- clone test vault if missing + copy theme in
 +-- version-bump.mjs          <- manifest/versions bump helper
 +-- versions.json             <- theme version -> min Obsidian version map
 +-- theme.css                 <- BUILD OUTPUT (generated; do not edit by hand)
@@ -167,7 +171,7 @@ which variable names exist and what they do.
 - Non-color slots are not colors: --cursor is default, --cursor-link is pointer.
 - Mirror dark and light. A variable assigned in one mode should be considered in
   the other.
-- Prefer small, reviewable changes and keep lint clean (npm run lint).
+- Prefer small, reviewable changes and keep lint clean (npm run lint:css).
 
 ## Status
 
