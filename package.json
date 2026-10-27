@@ -10,8 +10,9 @@
     "scripts": {
         "version": "node version-bump.mjs && git add manifest.json versions.json",
         "build:css": "postcss src/styles/main.css -o theme.css",
-        "lint": "stylelint \"src/**/*.css\"",
-        "install:vault": "node install.mjs"
+        "clean:css": "rm -f theme.css",
+        "lint:css": "stylelint \"src/**/*.css\" --cache-location ./.cache/ --cache-strategy content",
+        "install:theme": "node install.mjs"
     },
     "devDependencies": {
         "postcss": "8.5.31",
@@ -19,7 +20,8 @@
         "postcss-import": "17.0.1",
         "postcss-nested": "^9.0.1",
         "postcss-nested-import": "^1.3.0",
-        "stylelint": "^17.0.0",
+        "stylelint": "^17.16.0",
+        "stylelint-config-clean-order": "^10.0.0",
         "stylelint-config-obsidianmd": "^0.1.0",
         "stylelint-order": "^8.1.2"
     }

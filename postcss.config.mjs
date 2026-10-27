@@ -45,7 +45,7 @@ settingsInject.postcss = true;
 /** @type {import('postcss-load-config').Config} */
 export default {
   plugins: [
-    atImport(),
     settingsInject(),
+    atImport()
   ]
 }

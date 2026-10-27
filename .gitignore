@@ -10,3 +10,7 @@ node_modules/
 package-lock.json
 
 theme-test-vault/
+
+.cache/
+
+**/.stylelintcache
