@@ -143,9 +143,6 @@
 /* !SECTION Slider ---------------------------------------------------------------- */
 
 /* SECTION Tabs ------------------------------------------------------------------ */
-
-@import url("components.tabs.css");
-
 /* --tab-background-active  Tab background color (active tab) */
 /* --tab-text-color  Tab text color */
 /* --tab-text-color-active  Tab text color (non-focused window, active) */

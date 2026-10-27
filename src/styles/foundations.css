@@ -2,9 +2,14 @@
 @import url('./light/foundations.css');
 
 .body {
-  --border-width: 1px;
 
-  --icon-size: 16px;
+  --border-s: 1px;
+  --border-m: 2px;
+  --border-l: 4px;
+  --border-xl: 6px;
+
+  --border-width: var(--border-m);
+
   --icon-xs:  10px;
   --icon-s:  12px;
   --icon-m:  16px;
@@ -15,6 +20,8 @@
   --icon-m-stroke-width:  1.75px;
   --icon-l-stroke-width:  1.75px;
   --icon-xl-stroke-width:  1.25px;
+
+  --icon-size: var(--icon-m);
 
   --layer-cover:  5;
   --layer-sidedock:  10;

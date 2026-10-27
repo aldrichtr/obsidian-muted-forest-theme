@@ -1,7 +1,7 @@
 /* *********************************************************************************************************
  * palette: Define the colors used in Muted Forest Theme
  * ********************************************************************************************************/
-:root {
+.body {
 
   /* SECTION Greens */
   --green00: hsl(66.67deg 18.88 71.96);
@@ -46,17 +46,16 @@
   --gray60: hsl(0.00deg 0.00 29.41);
   --gray70: hsl(0.00deg 0.00 22.35);
   --gray80: hsl(0.00deg 0.00 15.69);
-
   --gray90: hsl(0.00deg 0.00 9.41);
   /* !SECTION */
 
 
-  --yellow00: hsl(48.46, 100.00, 94.90);
-  --yellow10: hsl(50.40, 15.92, 69.22);
-  --yellow20: hsl(50.40, 12.56, 60.98);
-  --yellow30: hsl(50.00, 10.00, 52.94);
-  --yellow40: hsl(49.57, 9.96, 45.29);
-  --yellow50: hsl(51.82, 11.46, 37.65);
+  --yellow00: hsl(48.46deg 100.00 94.90);
+  --yellow10: hsl(50.40deg 15.92 69.22);
+  --yellow20: hsl(50.40deg 12.56 60.98);
+  --yellow30: hsl(50.00deg 10.00 52.94);
+  --yellow40: hsl(49.57deg 9.96 45.29);
+  --yellow50: hsl(51.82deg 11.46 37.65);
 
   --black00: hsl(0deg 0 34);
   --black40: hsl(0deg 0 1);
@@ -64,12 +63,12 @@
   --white00: hsl(0deg 0 94.9);
   --white40: hsl(0deg 0 74.9);
 
-  --orange00: hsl(32, 82%, 70%);
-  --orange40: hsl(32, 81%, 58%);
-  --orange50: hsl(30, 59%, 51%);
-  --orange70: hsl(30, 59%, 27%);
+  --orange00: hsl(32deg 82% 70%);
+  --orange40: hsl(32deg 81% 58%);
+  --orange50: hsl(30deg 59% 51%);
+  --orange70: hsl(30deg 59% 27%);
 
-  --pink00: hsl(0, 58%, 82%);
+  --pink00: hsl(0deg 58% 82%);
   --pink40: hsl(344deg 40 57);
 
   --red00: hsl(347deg 32 63);

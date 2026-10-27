@@ -1,142 +1,354 @@
-:root {
-  --ta-green-deep-dark: #1e1e19;
-  --ta-green-dark: #282822;
-  --ta-green-oak-bark: #371F17;
-  --ta-green-forest-floor: #403F34;
-  --ta-green-evergreen: #6D6A46;
-  --ta-red-rustic-leather: #5E2E2E;
-  --ta-red-cabin-logs: #936538;
-  --ta-red-sandbox: #BDAE8F;
-  --ta-red-iron-oxide: #7A3B3B;
-  --ta-red-dried-berry: #8B4A4A;
-  --ta-red-clay: #A05C45;
-  --ta-red-worn-brick: #9C5B52;
-  --ta-blue-river: #5F6D6C;
-  --ta-blue-birch: #F6F0E6;
-  --ta-blue-slate: #4F5A63;
-  --ta-blue-storm: #6A7A80;
-  --ta-blue-deep-river: #3E4A4C;
-  --ta-blue-faded-denim: #7C8A8C;
-}
+/*
++--------------------------------------=:[ Muted Forest Theme ]:=------------------------------------------+
+|                                                                                                          |
+|  A theme for obsidian with muted tones, and colors found in the forest                                   |
++---------------------------------------------=:[  ]:=-----------------------------------------------------+
+*//*
+@settings
+name: Muted Forest Theme
+id: muted-forest-style
+settings:
+  - id:
+    title:
+    type:
 
- .theme-dark {
-  --tab-outline-color: var(--ta-green-dark);
-  --tab-curve: var(--radius-l);
-  --tab-radius: var(--radius-l);
-  --tab-radius-active: var(--radius-l);
-}
+*//* *********************************************************************************************************
+ * palette: Define the colors used in Muted Forest Theme
+ * ********************************************************************************************************/
+.body {
 
+  /* SECTION Greens */
+  --green00: hsl(66.67deg 18.88 71.96);
+  --green10: hsl(67.50deg 12.24 61.57);
+  --green20: hsl(68.57deg 8.50 51.57);
+  --green30: hsl(70.00deg 8.41 41.96);
+  --green40: hsl(75.00deg 9.64 32.55);
+  --green50: hsl(78.46deg 10.74 23.73);
+  --green60: hsl(78.00deg 12.82 15.29);
+  --green70: hsl(80.00deg 24.32 7.25);
+  /* !SECTION */
 
+  /* SECTION Browns */
+  --brown00: hsl(44.57deg 25.18 72.75);
+  --brown10: hsl(46.45deg 16.06 62.16);
+  --brown20: hsl(46.67deg 11.02 51.96);
+  --brown30: hsl(46.96deg 10.70 42.16);
+  --brown40: hsl(45.00deg 11.90 32.94);
+  --brown50: hsl(45.00deg 13.12 23.92);
+  --brown60: hsl(46.15deg 16.46 15.49);
+  --brown70: hsl(46.15deg 35.13 7.25);
+  /* !SECTION */
 
- body {
-   --font-text-size: 12px;
- }
+  /* SECTION Blues */
+  --blue00: hsl(200.00deg 40.16 75.10);
+  --blue10: hsl(201.33deg 24.86 64.51);
+  --blue20: hsl(201.00deg 17.09 54.12);
+  --blue30: hsl(201.18deg 15.18 43.92);
+  --blue40: hsl(200.00deg 17.24 34.12);
+  --blue50: hsl(201.60deg 19.68 24.90);
+  --blue60: hsl(198.95deg 22.89 16.27);
+  --blue70: hsl(198.75deg 40.00 7.84);
+  /* !SECTION */
 
- .theme-dark {
-   --color: var(--ta-green-oak-bark);
-   --background-primary: var(--ta-green-deep-dark);
-   --background-secondary: var(--ta-green-dark);
-   --h1-color: var(--ta-green-evergreen);
-
-   --h2-color: var(--ta-red-sandbox);
-   --h3-color: var(--ta-red-cabin-logs);
-
-   --link-color: var(--ta-blue-river);
-   --link-color-hover: var(--ta-red-sandbox);
-   --link-external-color: var(--ta-green-evergreen);
-   --link-external-color-hover: var(--ta-red-sandbox);
-
-   --tag-background: var(--ta-blue-storm);
-   --tag-color: var(--ta-blue-birch);
-
-   --tag-background-hover: var(--ta-blue-birch);
-   --tag-color-hover: var(--ta-blue-storm);
-
-
-   --metadata-border-color: var(--ta-green-forest-floor);
-   --metadata-border-radius: var(--radius-l);
-   --metadata-border-width: 3px;
- }
-
-
-.tag:not(.token) {
-  border: none;
-  color: white;
-  font-size: 11px;
-  padding: 3px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0px 0px;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.tag[href^="#obsidian"] {
-  background-color: #4d3ca6;
-}
+  /* SECTION Grays */
+  --gray00: hsl(0.00deg 0.00 76.47);
+  --gray10: hsl(0.00deg 0.00 67.84);
+  --gray20: hsl(0.00deg 0.00 59.61);
+  --gray30: hsl(0.00deg 0.00 51.77);
+  --gray40: hsl(0.00deg 0.00 43.92);
+  --gray50: hsl(0.00deg 0.00 36.47);
+  --gray60: hsl(0.00deg 0.00 29.41);
+  --gray70: hsl(0.00deg 0.00 22.35);
+  --gray80: hsl(0.00deg 0.00 15.69);
+  --gray90: hsl(0.00deg 0.00 9.41);
+  /* !SECTION */
 
 
-.status-bar {
-  width: var(--file-line-width);
+  --yellow00: hsl(48.46deg 100.00 94.90);
+  --yellow10: hsl(50.40deg 15.92 69.22);
+  --yellow20: hsl(50.40deg 12.56 60.98);
+  --yellow30: hsl(50.00deg 10.00 52.94);
+  --yellow40: hsl(49.57deg 9.96 45.29);
+  --yellow50: hsl(51.82deg 11.46 37.65);
+
+  --black00: hsl(0deg 0 34);
+  --black40: hsl(0deg 0 1);
+
+  --white00: hsl(0deg 0 94.9);
+  --white40: hsl(0deg 0 74.9);
+
+  --orange00: hsl(32deg 82% 70%);
+  --orange40: hsl(32deg 81% 58%);
+  --orange50: hsl(30deg 59% 51%);
+  --orange70: hsl(30deg 59% 27%);
+
+  --pink00: hsl(0deg 58% 82%);
+  --pink40: hsl(344deg 40 57);
+
+  --red00: hsl(347deg 32 63);
+  --red30: hsl(345deg 31 41);
+  --red40: hsl(344deg 31 34);
+
+  --cyan00: hsl(187.2deg 60.6 73.1);
+  --cyan40: hsl(187.1deg 41.5 40.2);
+
+  --purple00: hsl(268deg 48.4 75.7);
+  --purple40: hsl(267.3deg 24.4 44.1);
 }
-.status-bar-item.plugin-obsidian-cursor-location-plugin {
-  color: var(--ta-red-cabin-logs);
-  font-weight: var(--font-bold);
+.theme-dark {
+
+  /*
+ --color-base-00
+ --color-base-05
+ --color-base-10
+ --color-base-20
+ --color-base-25
+ --color-base-30
+ --color-base-35
+ --color-base-40
+ --color-base-50
+ --color-base-60
+ --color-base-70
+ --color-base-100
+
+ --accent-h
+ --accent-s
+ --accent-l
+ */
+
+  --color-red:    var(--red40);
+  --color-orange: var(--orange40);
+  --color-yellow: var(--yellow40);
+  --color-green:  var(--green40);
+  --color-cyan:   var(--cyan40);
+  --color-blue:   var(--blue40);
+  --color-purple: var(--purple40);
+  --color-pink:   var(--pink40);
+
+  --background-primary:       var(--green70);
+  --background-primary-alt:   var(--green60);
+  --background-secondary:     var(--gray70);
+  --background-secondary-alt: var(--gray60);
+
+  --background-modifier-hover:        var(--green60);
+  --background-modifier-active-hover: var(--green50);
+
+  --background-modifier-border:       var(--green40);
+  --background-modifier-border-hover: var(--green60);
+  --background-modifier-border-focus: var(--green60);
+
+  --background-modifier-error:        var(--red40);
+  --background-modifier-error-hover:  var(--red30);
+  --text-error:                       var(--red40);
+
+
+  --background-modifier-success:      var(--green40);
+  --text-success:                     var(--green40);
+
+  --background-modifier-message:      var(--gray70);
+
+  --background-modifier-form-field:   var(--gray80);
+
+  --interactive-normal:               var(--gray70);
+  --interactive-hover:                var(--gray60);
+  --interactive-accent:               var(--green40);
+  --interactive-accent-hsl:           75, 9.64%, 32.55%;
+  --interactive-accent-hover:         var(--green30);
+
+  --text-normal:                      var(--yellow10);
+  --text-muted:                       var(--yellow20);
+  --text-faint:                       var(--gray30);
+
+  --text-on-accent:                   var(--yellow00);
+  --text-on-accent-inverted:          var(--green70);
+  --text-warning:                     var(--orange50);
+  --text-accent:                      var(--cyan00);
+  --text-accent-hover:                var(--white00);
+  --text-selection:                   var(--green50);
+  --text-highlight-bg:                var(--brown50);
+  --caret-color:                      var(--yellow10);
+  --cursor:                           default;
+  --cursor-link:                      pointer;
+
+  --icon-color:         var(--yellow00);
+  --icon-color-hover:   var(--white00);
+  --icon-color-active:  var(--white00);
+  --icon-color-focused: var(--white00);
+
+  --bold-color:   var(--yellow00);
+  --italic-color: var(--yellow10);
+
 }
-.status-bar-item.plugin-obsidian-vimrc-support {
-  --text-color-normal: var(--ta-blue-birch);
-  --background-color-normal: var(--ta-red-cabin-logs);
-  --text-color-insert: var(--ta-blue-birch);
-  --background-color-insert: var(--ta-blue-river);
-  --text-color-visual: var(--ta-red-cabin-logs);
-  --background-color-visual: var(--ta-blue-birch);
-  --text-color-replace: var(--ta-blue-birch);
-  --background-color-replace: var(--ta-red-rustic-leather);
+.theme-light {
+
+  /*
+ --color-base-00
+ --color-base-05
+ --color-base-10
+ --color-base-20
+ --color-base-25
+ --color-base-30
+ --color-base-35
+ --color-base-40
+ --color-base-50
+ --color-base-60
+ --color-base-70
+ --color-base-100
+
+ --accent-h
+ --accent-s
+ --accent-l
+ */
+
+  --color-red:    var(--red40);
+  --color-orange: var(--orange40);
+  --color-yellow: var(--yellow40);
+  --color-green:  var(--green40);
+  --color-cyan:   var(--cyan40);
+  --color-blue:   var(--blue40);
+  --color-purple: var(--purple40);
+  --color-pink:   var(--pink40);
+
+  --background-primary:       var(--brown00);
+  --background-primary-alt:   var(--brown10);
+  --background-secondary:     var(--gray00);
+  --background-secondary-alt: var(--gray10);
+
+  --background-modifier-hover:        var(--brown10);
+  --background-modifier-active-hover: var(--brown20);
+
+  --background-modifier-border:       var(--gray20);
+  --background-modifier-border-hover: var(--gray30);
+  --background-modifier-border-focus: var(--gray40);
+
+  --background-modifier-error:        var(--red00);
+  --background-modifier-error-hover:  var(--red00);
+  --text-error:                       var(--red40);
+
+  --background-modifier-success:      var(--green00);
+  --text-success:                     var(--green50);
+
+  --background-modifier-message:      var(--gray10);
+
+  --background-modifier-form-field:   var(--white00);
+
+  --interactive-normal:               var(--gray10);
+  --interactive-hover:                var(--gray20);
+  --interactive-accent:               var(--green40);
+  --interactive-accent-hsl:           75, 9.64%, 32.55%;
+  --interactive-accent-hover:         var(--green50);
+
+  --text-normal:                      var(--gray70);
+  --text-muted:                       var(--gray60);
+  --text-faint:                       var(--gray50);
+
+  --text-on-accent:                   var(--white00);
+  --text-on-accent-inverted:          var(--green70);
+  --text-warning:                     var(--orange70);
+  --text-accent:                      var(--blue60);
+  --text-accent-hover:                var(--blue50);
+  --text-selection:                   var(--brown10);
+  --text-highlight-bg:                var(--yellow00);
+  --caret-color:                      var(--gray70);
+  --cursor:                           default;
+  --cursor-link:                      pointer;
+
+  --icon-color:         var(--gray70);
+  --icon-color-hover:   var(--gray90);
+  --icon-color-active:  var(--gray90);
+  --icon-color-focused: var(--gray90);
+
+  --bold-color:   var(--gray90);
+  --italic-color: var(--gray70);
+
 }
-.status-bar-item.plugin-obsidian-vimrc-support {
-  order: -9999;
-  margin: -4px auto -5px -5px;
-  padding-right: 0px;
-  padding-left: 1em;
-  font-family: 'FiraCode Nerd Font Mono';
-  font-weight: bold;
-  font-size: 1.2em;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-.status-bar-item.plugin-obsidian-vimrc-support:after {
-  content: '';
-  position: relative;
-  font-size: 1.5rem;
-  left: 0.9rem;
-  margin-top: 0.1rem;
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="normal"]:after {
-  color: var(--background-color-normal);
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="normal"] {
-  color: var(--text-color-normal);
-  background-color: var(--background-color-normal);
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="insert"]:after {
-  color: var(--background-color-insert);
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="insert"] {
-  color: var(--text-color-insert);
-  background-color: var(--background-color-insert);
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="visual"]:after {
-  color: var(--background-color-visual);
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="visual"] {
-  color: var(--text-color-visual);
-  background-color: var(--background-color-visual);
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="replace"]:after {
-  color: var(--background-color-replace);
-}
-.status-bar-item.vimrc-support-vim-mode[data-vim-mode="replace"] {
-  color: var(--text-color-replace);
-  background-color: var(--background-color-replace);
+.body {
+
+  --border-s: 1px;
+  --border-m: 2px;
+  --border-l: 4px;
+  --border-xl: 6px;
+
+  --border-width: var(--border-m);
+
+  --icon-xs:  10px;
+  --icon-s:  12px;
+  --icon-m:  16px;
+  --icon-l:  18px;
+  --icon-xl:  32px;
+  --icon-xs-stroke-width:  2px;
+  --icon-s-stroke-width:  2px;
+  --icon-m-stroke-width:  1.75px;
+  --icon-l-stroke-width:  1.75px;
+  --icon-xl-stroke-width:  1.25px;
+
+  --icon-size: var(--icon-m);
+
+  --layer-cover:  5;
+  --layer-sidedock:  10;
+  --layer-status-bar:  15;
+  --layer-popover:  30;
+  --layer-slides:  45;
+  --layer-modal:  50;
+  --layer-notice:  60;
+  --layer-menu:  65;
+  --layer-tooltip:  70;
+  --layer-dragged-item:  80;
+
+  --radius-s:  4px;
+  --radius-m:  8px;
+  --radius-l:  12px;
+  --radius-xl:  16px;
+
+  --size-2-1:  2px;
+  --size-2-2:  4px;
+  --size-2-3:  6px;
+  --size-4-1:  4px;
+  --size-4-2:  8px;
+  --size-4-3:  12px;
+  --size-4-4:  16px;
+  --size-4-5:  20px;
+  --size-4-6:  24px;
+  --size-4-8:  32px;
+  --size-4-9:  36px;
+  --size-4-12:  48px;
+  --size-4-16:  64px;
+  --size-4-18:  72px;
+
+  --font-interface-theme:  "Ubuntu Sans";
+  --font-text-theme:  "Atkinson Hyperlegible";
+  --font-monospace-theme:  "AtkynsonMono Nerd Font Mono";
+
+  --font-text-size:  16px;
+  --font-smallest:   0.8em;
+  --font-smaller:    0.875em;
+  --font-small:      0.933em;
+
+  --font-ui-smaller: 12px;
+  --font-ui-small:   13px;
+  --font-ui-medium:  15px;
+  --font-ui-large:   20px;
+
+  --font-thin:  100;
+  --font-extralight:  200;
+  --font-light:  300;
+  --font-normal:  400;
+  --font-medium:  500;
+  --font-semibold:  600;
+  --font-bold:  700;
+  --font-extrabold:  800;
+  --font-black:  900;
+
+  --font-weight: var(--font-normal);
+
+  --bold-modifier: 150;
+  --bold-weight: var(--font-bold);
+
+  --line-height-normal: 1.5;
+  --line-height-tight:  1.3;
+
+  --heading-spacing: 1.5;
+  --p-spacing: 2;
+
+/* !SECTION: Typography ------------------------------------------------------------ */
 }
