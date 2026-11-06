@@ -15,7 +15,21 @@
       "editor.suggest.insertMode": "replace",
       "cSpell.fixSpellingWithRenameProvider": false,
       "editor.defaultFormatter": "MikeBovenlander.formate",
-
+    }
+    "[markdown]": {
+      "editor.unicodeHighlight.ambiguousCharacters": false,
+      "editor.unicodeHighlight.invisibleCharacters": false,
+      "editor.defaultFormatter": "rvben.rumdl",
+      "diffEditor.ignoreTrimWhitespace": false,
+      "editor.wordWrap": "on",
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      },
+      "cSpell.fixSpellingWithRenameProvider": true,
+      "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+      "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
     }
   },
   "extensions": {

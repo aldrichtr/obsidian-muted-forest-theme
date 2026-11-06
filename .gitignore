@@ -12,3 +12,6 @@ theme-test-vault/
 .cache/
 
 **/.stylelintcache
+
+## Ignore the build output
+theme.css

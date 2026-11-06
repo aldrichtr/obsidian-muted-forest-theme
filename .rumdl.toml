@@ -1,0 +1,583 @@
+# ---------------------------------------------------------------------------------------------------------
+# -- rumdl markdown linter configuration file
+# ---------------------------------------------------------------------------------------------------------
+# -- This is the top level configuration file for the KmSystem Vault
+# ---------------------------------------------------------------------------------------------------------
+# Schema: https://raw.githubusercontent.com/rvben/rumdl/main/rumdl.schema.json
+# Docs:   https://rumdl.dev/rules/  (rule reference)
+#         https://rumdl.dev/config/global/  (global settings)
+
+[global]
+# rumdl runner cache
+cache = true
+# cache-dir: relative path resolves against the project root (default: .rumdl_cache)
+cache-dir = ".cache"
+
+# Respect other tools' config
+respect-gitignore = true
+editorconfig = true
+
+# Global behavior
+# flavor: standard | gfm | mkdocs | mdx | pandoc | quarto | obsidian | kramdown | azure_devops | myst | hugo | mdg | gh-aw
+flavor = "obsidian"
+# line-length: default for line-length rules (primarily MD013); a rule's own line-length overrides this
+line-length = 108
+# output-format: text | full | concise | grouped | json | json-lines | github | gitlab | pylint | azure
+output-format = "text"
+
+# Filesystem scope
+include = [
+  "**/*.md"
+]
+
+exclude = [
+  ".cache",     # External tools cache and temp files
+]
+
+# force-exclude: apply exclude patterns even to files passed explicitly on the command line
+
+# Global rule enablement (rule IDs). disable wins over enable; extend-* merge additively.
+# enable = ["MDxxx", ...] runs ONLY those rules; enable = [] disables everything. Leave empty to use defaults.
+# enable = []
+
+# disable = []
+
+# extend-enable: add opt-in rules on top of defaults (e.g. ["MD060", "MD063"])
+# extend-enable = []
+
+# extend-disable: additive disables that survive CLI --disable overrides
+# extend-disable = []
+
+# Fixability (rule IDs). fixable: only these rules may be auto-fixed. unfixable: never auto-fix these.
+# fixable = []
+# unfixable = []
+
+# ---------------------------------------------------------------------------------------------------------
+# -- Table-type global settings (must be their own sections, cannot live under [global])
+# ---------------------------------------------------------------------------------------------------------
+
+# per-file-ignores: disable specific rules for glob-matched files, e.g. "README.md" = ["MD033"]
+[per-file-ignores]
+
+# per-file-flavor: override the markdown flavor for glob-matched files, e.g. "**/*.mdx" = "mdx"
+[per-file-flavor]
+
+# code-block-tools: run external formatters/linters on code blocks (opt-in; off by default)
+[code-block-tools]
+enabled = true
+normalize-language = "linguist"
+on-error = "fail"
+on-missing-language-definition = "ignore"
+on-missing-tool-binary = "ignore"
+timeout = 30000
+
+# code-block-tools sub-tables (leave empty unless configuring external tools):
+[code-block-tools.languages]
+python = { lint = ["ruff:check"], format = ["ruff:format"]},
+
+
+[code-block-tools.language-aliases]
+
+[code-block-tools.tools]
+
+# =========================================================================================================
+# -- Per-rule settings (numeric order). Comment above each: <rule url> :: <description>
+# =========================================================================================================
+
+# https://rumdl.dev/md001 :: Heading levels should only increment by one level at a time
+[MD001]
+front-matter-title = true
+front-matter-title-pattern = "^(title|name):"
+
+# https://rumdl.dev/md003 :: Heading style
+[MD003]
+style = "atx"
+
+# https://rumdl.dev/md004 :: Use consistent style for unordered list markers
+[MD004]
+style = "dash"
+
+# https://rumdl.dev/md005 :: List indentation should be consistent
+[MD005]
+
+# https://rumdl.dev/md007 :: Unordered list indentation
+[MD007]
+# GOTCHA: indent/start-indent are ignored while style = "text-aligned" (nested items align
+# under parent text). Use style = "fixed" if you want indent to take effect. rumdl warns otherwise.
+indent = 2
+start-indent = 2
+start-indented = false
+style = "fixed"
+
+# https://rumdl.dev/md009 :: Trailing spaces should be removed
+[MD009]
+br-spaces = 2
+list-item-empty-lines = false
+strict = false
+
+# https://rumdl.dev/md010 :: No tabs
+[MD010]
+code-blocks = false
+ignore-code-languages = ["makefile"]
+spaces-per-tab = 4
+
+# https://rumdl.dev/md011 :: Reversed link syntax
+[MD011]
+
+# https://rumdl.dev/md012 :: Multiple consecutive blank lines
+[MD012]
+maximum = 1
+
+# https://rumdl.dev/md013 :: Line length should not be excessive
+[MD013]
+abbreviations = []
+atomic-spans = true
+blockquotes = true
+code-blocks = true
+code-spans = true
+headings = true
+ignore-link-urls = true
+length-mode = "visual"
+line-length = 108
+math-blocks = true
+paragraphs = true
+reflow = true
+# Reflow mode:
+# - `default` :           Standard text wrapping that breaks lines at word boundaries to
+#                         fit within the configured line length.
+# - `normalize` :         Normalizes all paragraph text to consistently wrap at the configured line
+#                         length, removing irregular line breaks.
+# - `sentence-per-line` : Enforces one sentence per line, making diffs cleaner and easier to review,
+#                         among other advantages.
+# - `semantic-line-breaks` : Breaks lines at semantic boundaries using a cascading strategy
+reflow-mode = "normalize"
+reflow-length-exemptions = false
+require-sentence-capital = true
+stern = false
+strict = false
+tables = false
+# separate line-length cap for code blocks (unset = use line-length)
+# code-block-line-length =
+# separate line-length cap for headings (unset = use line-length)
+heading-line-length = 80
+
+# https://rumdl.dev/md014 :: Commands in code blocks should show output
+[MD014]
+show-output = true
+
+# https://rumdl.dev/md018 :: No space after hash in heading
+[MD018]
+# A magic link is #\d+, such as github issue numbers, etc
+magiclink = false
+
+# Recognize #\w.* as tags, defaults to true when flavor = obsidian
+# tags =
+
+# https://rumdl.dev/md019 :: Multiple spaces after hash in heading
+[MD019]
+
+# https://rumdl.dev/md020 :: No space inside hashes on closed heading
+[MD020]
+
+# https://rumdl.dev/md021 :: Multiple spaces inside hashes on closed heading
+[MD021]
+
+# https://rumdl.dev/md022 :: Headings should be surrounded by blank lines
+[MD022]
+allowed-at-start = true
+lines-above = 1
+lines-below = 1
+
+# https://rumdl.dev/md023 :: Headings must start at the beginning of the line
+[MD023]
+
+# https://rumdl.dev/md024 :: Multiple headings with the same content
+[MD024]
+allow-different-link-anchors = true
+allow-different-nesting = false
+siblings-only = true
+
+# https://rumdl.dev/md025 :: Multiple top-level headings in the same document
+[MD025]
+allow-document-sections = false
+allow-with-separators = false
+front-matter-title = "title"
+level = 1
+
+# https://rumdl.dev/md026 :: Trailing punctuation in heading
+[MD026]
+punctuation = ".,;:!"
+
+# https://rumdl.dev/md027 :: Multiple spaces after quote marker (>)
+[MD027]
+list-items = false
+
+# https://rumdl.dev/md028 :: Blank line inside blockquote
+[MD028]
+fix = false
+
+# https://rumdl.dev/md029 :: Ordered list marker value
+[MD029]
+style = "one-or-ordered"
+
+# https://rumdl.dev/md030 :: Spaces after list markers should be consistent
+[MD030]
+ol-align-column = 0
+ol-multi = 1
+ol-single = 1
+ul-multi = 1
+ul-single = 1
+
+# https://rumdl.dev/md031 :: Fenced code blocks should be surrounded by blank lines
+[MD031]
+list-items = false
+
+# https://rumdl.dev/md032 :: Lists should be surrounded by blank lines
+[MD032]
+allow-lazy-continuation = true
+
+# https://rumdl.dev/md033 :: Inline HTML is not allowed
+[MD033]
+allowed-elements = ["details", "summary"]
+allowed-inside = []
+br-style = "trailing-spaces"
+disallowed-elements = []
+drop-attributes = [
+  "target",
+  "rel",
+  "width",
+  "height",
+  "align",
+  "class",
+  "id",
+  "style",
+]
+fix = true
+fix-mode = "conservative"
+strip-wrapper-elements = ["p"]
+# HTML elements allowed specifically inside tables (unset = use allowed-elements)
+# table-allowed-elements =
+
+# https://rumdl.dev/md034 :: No bare URLs - wrap URLs in angle brackets
+[MD034]
+
+# https://rumdl.dev/md035 :: Horizontal rule style
+[MD035]
+style = "consistent"
+
+# https://rumdl.dev/md036 :: Emphasis should not be used instead of a heading
+[MD036]
+fix = false
+heading-level = 2
+heading-style = "atx"
+punctuation = ".,;:!?"
+
+# https://rumdl.dev/md037 :: Spaces inside emphasis markers
+[MD037]
+
+# https://rumdl.dev/md038 :: Spaces inside code span elements
+[MD038]
+
+# https://rumdl.dev/md039 :: Spaces inside link text
+[MD039]
+
+# https://rumdl.dev/md040 :: Code blocks should have a language specified
+[MD040]
+allowed-languages = []
+custom-languages = [
+  "base",
+  "canvas"
+]
+disallowed-languages = []
+preferred-aliases = { Shell = "bash", JavaScript = "js"}
+style = "consistent"
+unknown-language-action = "error"
+
+# https://rumdl.dev/md041 :: First line in file should be a top level heading
+[MD041]
+allow-preamble = true
+fix = true
+front-matter-title = "title"
+level = 2
+# regex; only front-matter keys matching this count as the title (default: ^title:$)
+front-matter-title-pattern = "^(title|name):"
+
+# https://rumdl.dev/md042 :: No empty links
+[MD042]
+
+# https://rumdl.dev/md043 :: Required heading structure
+[MD043]
+headings = []
+match-case = false
+
+# https://rumdl.dev/md044 :: Proper names should have the correct capitalization
+[MD044]
+code-blocks = false
+html-comments = true
+html-elements = true
+names = []
+# frontmatter fields to skip when checking proper-name capitalization
+# ignore-frontmatter-fields =
+
+# https://rumdl.dev/md045 :: Images should have alternate text (alt text)
+[MD045]
+
+# https://rumdl.dev/md046 :: Code blocks should use a consistent style
+[MD046]
+style = "consistent"
+
+# https://rumdl.dev/md047 :: Files should end with a single newline character
+[MD047]
+
+# https://rumdl.dev/md048 :: Code fence style should be consistent
+[MD048]
+style = "consistent"
+
+# https://rumdl.dev/md049 :: Emphasis style should be consistent
+[MD049]
+style = "asterisk"
+
+# https://rumdl.dev/md050 :: Strong emphasis style should be consistent
+[MD050]
+style = "asterisk"
+
+# https://rumdl.dev/md051 :: Link fragments should reference valid headings
+[MD051]
+anchor-style = "github"
+check-frontmatter = false
+ignore-case = true
+ignore-frontmatter-fields = []
+# regex; link fragments matching this are not validated (unset = none)
+# ignored-pattern =
+
+# https://rumdl.dev/md052 :: Reference links and images should use a reference that exists
+[MD052]
+ignore = []
+shortcut-syntax = false
+
+# https://rumdl.dev/md053 :: Link and image reference definitions should be needed
+[MD053]
+ignored-definitions = []
+
+# https://rumdl.dev/md054 :: Link and image style should be consistent
+[MD054]
+autolink = true
+collapsed = true
+full = true
+inline = true
+preferred-style = "auto"
+shortcut = true
+url-inline = true
+
+# https://rumdl.dev/md055 :: Table pipe style should be consistent
+[MD055]
+style = "leading-and-trailing"
+
+# https://rumdl.dev/md056 :: Table column count should be consistent
+[MD056]
+
+# https://rumdl.dev/md057 :: Relative links should point to existing files
+[MD057]
+absolute-links = "ignore"
+check-frontmatter = false
+compact-paths = false
+ignore-frontmatter-fields = []
+roots = []
+search-paths = []
+self-referential-links = false
+
+# https://rumdl.dev/md058 :: Tables should be surrounded by blank lines
+[MD058]
+minimum-after = 1
+minimum-before = 1
+
+# https://rumdl.dev/md059 :: Link text should be descriptive
+[MD059]
+prohibited-texts = ["click here", "here", "link", "more"]
+
+# https://rumdl.dev/md060 :: Table columns should be consistently aligned
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD060]
+enabled = true
+style = "aligned"
+aligned-delimiter = true
+column-align = "auto"
+loose-last-column = false
+max-width = 0
+# force body-cell alignment independent of the delimiter row (unset = follow column-align)
+# column-align-body =
+# force header-cell alignment independent of the delimiter row (unset = follow column-align)
+# column-align-header =
+
+# https://rumdl.dev/md061 :: Forbidden terms
+[MD061]
+case-sensitive = true
+terms = []
+
+# https://rumdl.dev/md062 :: Link destination should not have leading or trailing whitespace
+[MD062]
+
+# https://rumdl.dev/md063 :: Heading capitalization
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD063]
+enabled = false
+ignore-words = []
+lowercase-words = [
+  "a",
+  "an",
+  "and",
+  "as",
+  "at",
+  "but",
+  "by",
+  "for",
+  "from",
+  "in",
+  "into",
+  "nor",
+  "of",
+  "off",
+  "on",
+  "or",
+  "per",
+  "so",
+  "the",
+  "to",
+  "up",
+  "via",
+  "with",
+  "yet",
+]
+max-level = 6
+min-level = 1
+preserve-cased-words = true
+sentence-case-restart-after = []
+style = "title-case"
+
+# https://rumdl.dev/md064 :: Multiple consecutive spaces
+[MD064]
+allow-sentence-double-space = true
+
+# https://rumdl.dev/md065 :: Horizontal rules should be surrounded by blank lines
+[MD065]
+
+# https://rumdl.dev/md066 :: Footnote validation
+[MD066]
+
+# https://rumdl.dev/md067 :: Footnote definitions should appear in order of first reference
+[MD067]
+
+# https://rumdl.dev/md068 :: Footnote definitions should not be empty
+[MD068]
+
+# https://rumdl.dev/md069 :: Duplicate list markers
+[MD069]
+
+# https://rumdl.dev/md070 :: Nested code fence collision - use longer fence to avoid premature closure
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD070]
+enabled = true
+
+# https://rumdl.dev/md071 :: Blank line after frontmatter
+[MD071]
+
+# https://rumdl.dev/md072 :: Frontmatter keys should be sorted alphabetically
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD072]
+enabled = true
+key-order = []
+required-keys = []
+
+# https://rumdl.dev/md073 :: Table of Contents should match document headings
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD073]
+enabled = true
+enforce-order = true
+indent = 2
+max-level = 4
+min-level = 2
+
+# https://rumdl.dev/md074 :: MkDocs nav entries should point to existing files
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD074]
+absolute-links = "ignore"
+not-found = "warn"
+omitted-files = "ignore"
+
+# https://rumdl.dev/md075 :: Orphaned table rows or headerless pipe content
+[MD075]
+
+# https://rumdl.dev/md076 :: List item spacing should be consistent
+[MD076]
+allow-loose-continuation = false
+style = "consistent"
+
+# https://rumdl.dev/md077 :: List continuation content indentation
+[MD077]
+style = "aligned"
+# required continuation indent in spaces (unset = auto-detect from list marker)
+indent = 2
+
+# https://rumdl.dev/md078 :: Executable Quarto chunks should have a label
+[MD078]
+
+# https://rumdl.dev/md079 :: Quarto chunk labels must not contain whitespace
+[MD079]
+
+# https://rumdl.dev/md080 :: Heading anchors must be unique
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD080]
+enabled = true
+anchor-style = "github"
+levels = [1, 2]
+
+# https://rumdl.dev/md081 :: Inline emphasis should not be excessive
+[MD081]
+targets = "strong"
+# max consecutive emphasized runs before flagging (unset = no limit)
+max-consecutive = 2
+# max emphasized spans per paragraph before flagging (unset = no limit)
+max-per-paragraph = 4
+
+# https://rumdl.dev/md082 :: Headings should have content before the next heading
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD082]
+enabled = true
+allow-parent-headings = true
+level = 2
+
+# https://rumdl.dev/md083 :: Detect mojibake due to encoding issues
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD083]
+enabled = true
+ignore = []
+ignore-code-blocks = true
+
+# https://rumdl.dev/md084 :: Invisible or discouraged Unicode characters should be intentional
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD084]
+enabled = true
+allow = []
+strict = false
+
+# https://rumdl.dev/md085 :: Paragraph continuation lines should not be indented
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD085]
+enabled = true
+
+# https://rumdl.dev/md086 :: Comments should be closed
+[MD086]
+enabled = true
+
+# https://rumdl.dev/md087 :: Inline disable comments should suppress something
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD087]
+enabled = true
+
+# https://rumdl.dev/md088 :: Quotes and dashes should be replaced with ASCII equivalents
+# NOTE: opt-in rule (disabled by default). Enable via this rule's enabled = true or global extend-enable.
+[MD088]
+enabled = true
+allow = []
+normalize-dashes = true
+normalize-quotes = true
