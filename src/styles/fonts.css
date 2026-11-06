@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+
+/* @fonts-inject */
+
+
+body {
+
+  --font-interface-theme: 'Ubuntu Sans';
+  --font-text-theme:      'Atkinson Hyperlegible';
+  --font-monospace-theme: 'Source Code Pro';
+  --font-title-theme: 'Lustria';
+  --font-header-theme: 'Ubuntu Sans';
+
+
+  --font-ui-smaller: 12px;
+  --font-ui-small:   13px;
+  --font-ui-medium:  15px;
+  --font-ui-large:   20px;
+
+  /* Font weights */
+  --font-thin:       100;
+  --font-extralight: 200;
+  --font-light:      300;
+  --font-normal:     400;
+  --font-medium:     500;
+  --font-semibold:   600;
+  --font-bold:       700;
+  --font-extrabold:  800;
+  --font-black:      900;
+
+  --font-text-size: 14px;
+  --font-smallest:   calc(var(var(--font-text-size) * .80));
+  --font-smaller:    calc(var(var(--font-text-size) * .85));
+  --font-small:      calc(var(var(--font-text-size) * .90));
+  --font-large:      calc(var(var(--font-text-size) * 1.10));
+  --font-larger:    calc(var(var(--font-text-size) * 1.15));
+  --font-largest:   calc(var(var(--font-text-size) * 1.2));
+
+
+
+  --bold-modifier: 150;
+  --bold-weight:   var(--font-bold);
+
+  --font-weight:    var(--font-normal);
+}

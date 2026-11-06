@@ -1,4 +1,6 @@
 @import url('./preamble.css');
 /* @settings-inject */
 @import url('./palette.css');
+@import url('./fonts.css');
 @import url('./foundations.css');
+@import url('./editor.css');

@@ -5,105 +5,124 @@
 
   /* SECTION Base */
   /* One ramp for both modes: sage-tan (light end) to olive (dark end). */
-  --base25:  oklch(96% 0.018 104deg);
-  --base50:  oklch(93% 0.022 105deg);
-  --base100: oklch(90% 0.021 106deg);
-  --base150: oklch(86% 0.019 107deg);
-  --base200: oklch(81% 0.017 108deg);
-  --base300: oklch(72% 0.013 110deg);
-  --base400: oklch(62% 0.013 113deg);
-  --base500: oklch(54% 0.012 115deg);
-  --base600: oklch(48% 0.012 116deg);
-  --base700: oklch(36% 0.012 119deg);
-  --base800: oklch(30% 0.015 120deg);
-  --base850: oklch(27% 0.017 121deg);
-  --base900: oklch(24% 0.018 122deg);
-  --base950: oklch(21% 0.018 123deg);
-  --base975: oklch(18% 0.017 123deg);
+  --base25:  oklch(96% 0.018 104);
+  --base50:  oklch(93% 0.022 105);
+  --base100: oklch(90% 0.021 106);
+  --base150: oklch(86% 0.019 107);
+  --base200: oklch(81% 0.017 108);
+  --base300: oklch(72% 0.013 110);
+  --base400: oklch(62% 0.013 113);
+  --base500: oklch(54% 0.012 115);
+  --base600: oklch(48% 0.012 116);
+  --base700: oklch(36% 0.012 119);
+  --base800: oklch(30% 0.015 120);
+  --base850: oklch(27% 0.017 121);
+  --base900: oklch(24% 0.018 122);
+  --base950: oklch(21% 0.018 123);
+  --base975: oklch(18% 0.017 123);
   /* !SECTION */
 
   /* SECTION Yellow */
   /* Light end of the warm ramp; brown continues it from 300. Same lightness columns as base. */
   /* yellow50 is the light-mode highlight surface. */
-  --yellow50:  oklch(93% 0.045 98deg);
-  --yellow100: oklch(90% 0.040 95deg);
-  --yellow150: oklch(86% 0.040 95deg);
-  --yellow200: oklch(81% 0.037 93deg);
+  --yellow50:  oklch(93% 0.045 98);
+  --yellow100: oklch(90% 0.040 95);
+  --yellow150: oklch(86% 0.040 95);
+  --yellow200: oklch(81% 0.037 93);
   /* !SECTION */
 
   /* SECTION Brown */
   /* Continues the yellow ramp: brown300 is the original brown10. Hue warms as it darkens. */
-  --brown300: oklch(72% 0.034 94deg);
-  --brown400: oklch(62% 0.042 76deg);
-  --brown500: oklch(54% 0.046 68deg);
-  --brown600: oklch(48% 0.046 62deg);
-  --brown700: oklch(36% 0.042 58deg);
-  --brown800: oklch(30% 0.036 56deg);
-  --brown900: oklch(24% 0.030 55deg);
+  --brown300: oklch(72% 0.034 94);
+  --brown400: oklch(62% 0.042 76);
+  --brown500: oklch(54% 0.046 68);
+  --brown600: oklch(48% 0.046 62);
+  --brown700: oklch(36% 0.042 58);
+  --brown800: oklch(30% 0.036 56);
+  --brown900: oklch(24% 0.030 55);
   /* !SECTION */
 
   /* SECTION Blue */
   /* blue400 is the original blue20, blue500 is blue30. */
-  --blue50:  oklch(93% 0.025 230deg);
-  --blue100: oklch(90% 0.032 231deg);
-  --blue150: oklch(86% 0.035 232deg);
-  --blue200: oklch(81% 0.037 232deg);
-  --blue400: oklch(62% 0.036 232deg);
-  --blue500: oklch(54% 0.034 232deg);
-  --blue600: oklch(48% 0.034 233deg);
-  --blue900: oklch(24% 0.028 235deg);
+  --blue50:  oklch(93% 0.025 230);
+  --blue100: oklch(90% 0.032 231);
+  --blue150: oklch(86% 0.035 232);
+  --blue200: oklch(81% 0.037 232);
+  --blue400: oklch(62% 0.036 232);
+  --blue500: oklch(54% 0.034 232);
+  --blue600: oklch(48% 0.034 233);
+  --blue900: oklch(24% 0.028 235);
+  /* !SECTION */
+
+
+  /* SECTION Gray */
+  --gray25: oklch(96% 0 0);
+  --gray50: oklch(93% 0 0);
+  --gray100: oklch(90% 0 0);
+  --gray150: oklch(86% 0 0);
+  --gray200: oklch(81% 0 0);
+  --gray300: oklch(72% 0 0);
+  --gray400: oklch(62% 0 0);
+  --gray500: oklch(54% 0 0);
+  --gray600: oklch(48% 0 0);
+  --gray700: oklch(36% 0 0);
+  --gray800: oklch(30% 0 0);
+  --gray850: oklch(27% 0 0);
+  --gray900: oklch(24% 0 0);
+  --gray950: oklch(21% 0 0);
+  --gray975: oklch(18% 0 0);
   /* !SECTION */
 
   /* SECTION Accents */
   /* Shared columns with base; accent chroma tier (higher than identity ramps). */
   /* Roles: 150 dark text, 200 dark hover, 400 dark UI, 500 light UI, 600 light text, 50/900 surfaces. */
-  --red50:  oklch(93% 0.032 28deg);
-  --red150: oklch(86% 0.060 29deg);
-  --red200: oklch(81% 0.062 29deg);
-  --red400: oklch(62% 0.075 31deg);
-  --red500: oklch(54% 0.075 32deg);
-  --red600: oklch(48% 0.070 33deg);
-  --red900: oklch(24% 0.045 35deg);
+  --red50:  oklch(93% 0.032 28);
+  --red150: oklch(86% 0.060 29);
+  --red200: oklch(81% 0.062 29);
+  --red400: oklch(62% 0.075 31);
+  --red500: oklch(54% 0.075 32);
+  --red600: oklch(48% 0.070 33);
+  --red900: oklch(24% 0.045 35);
 
-  --orange50:  oklch(93% 0.041 62deg);
-  --orange150: oklch(86% 0.075 62deg);
-  --orange200: oklch(81% 0.077 61deg);
-  --orange400: oklch(62% 0.094 60deg);
-  --orange500: oklch(54% 0.094 60deg);
-  --orange600: oklch(48% 0.088 59deg);
-  --orange900: oklch(24% 0.052 58deg);
+  --orange50:  oklch(93% 0.041 62);
+  --orange150: oklch(86% 0.075 62);
+  --orange200: oklch(81% 0.077 61);
+  --orange400: oklch(62% 0.094 60);
+  --orange500: oklch(54% 0.094 60);
+  --orange600: oklch(48% 0.088 59);
+  --orange900: oklch(24% 0.052 58);
 
-  --pink50:  oklch(93% 0.039 347deg);
-  --pink150: oklch(86% 0.066 347deg);
-  --pink200: oklch(81% 0.068 347deg);
-  --pink400: oklch(62% 0.083 346deg);
-  --pink500: oklch(54% 0.083 346deg);
-  --pink600: oklch(48% 0.077 346deg);
-  --pink900: oklch(24% 0.050 345deg);
+  --pink50:  oklch(93% 0.039 347);
+  --pink150: oklch(86% 0.066 347);
+  --pink200: oklch(81% 0.068 347);
+  --pink400: oklch(62% 0.083 346);
+  --pink500: oklch(54% 0.083 346);
+  --pink600: oklch(48% 0.077 346);
+  --pink900: oklch(24% 0.050 345);
 
-  --purple50:  oklch(93% 0.036 302deg);
-  --purple150: oklch(86% 0.066 302deg);
-  --purple200: oklch(81% 0.068 301deg);
-  --purple400: oklch(62% 0.083 300deg);
-  --purple500: oklch(54% 0.083 300deg);
-  --purple600: oklch(48% 0.077 299deg);
-  --purple900: oklch(24% 0.050 298deg);
+  --purple50:  oklch(93% 0.036 302);
+  --purple150: oklch(86% 0.066 302);
+  --purple200: oklch(81% 0.068 301);
+  --purple400: oklch(62% 0.083 300);
+  --purple500: oklch(54% 0.083 300);
+  --purple600: oklch(48% 0.077 299);
+  --purple900: oklch(24% 0.050 298);
 
-  --cyan50:  oklch(93% 0.035 180deg);
-  --cyan150: oklch(86% 0.060 180deg);
-  --cyan200: oklch(81% 0.062 180deg);
-  --cyan400: oklch(62% 0.075 181deg);
-  --cyan500: oklch(54% 0.075 181deg);
-  --cyan600: oklch(48% 0.070 181deg);
-  --cyan900: oklch(24% 0.039 182deg);
+  --cyan50:  oklch(93% 0.035 180);
+  --cyan150: oklch(86% 0.060 180);
+  --cyan200: oklch(81% 0.062 180);
+  --cyan400: oklch(62% 0.075 181);
+  --cyan500: oklch(54% 0.075 181);
+  --cyan600: oklch(48% 0.070 181);
+  --cyan900: oklch(24% 0.039 182);
 
   /* green: success and positive states. Clearly green, between the olive base and cyan. */
-  --green50:  oklch(93% 0.042 140deg);
-  --green150: oklch(86% 0.072 140deg);
-  --green200: oklch(81% 0.074 140deg);
-  --green400: oklch(62% 0.090 141deg);
-  --green500: oklch(54% 0.090 141deg);
-  --green600: oklch(48% 0.084 141deg);
-  --green900: oklch(24% 0.054 142deg);
+  --green50:  oklch(93% 0.042 140);
+  --green150: oklch(86% 0.072 140);
+  --green200: oklch(81% 0.074 140);
+  --green400: oklch(62% 0.090 141);
+  --green500: oklch(54% 0.090 141);
+  --green600: oklch(48% 0.084 141);
+  --green900: oklch(24% 0.054 142);
   /* !SECTION */
 }
