@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 
+const args = process.argv.slice(2);
 const testValtRepo = 'community-archive/theme-dev-vault';
 const testVaultPath = join(projectRoot, 'theme-test-vault');
 const manifestPath = join(projectRoot, "manifest.json");
@@ -34,8 +35,8 @@ function cloneTestVault(repo, vaultPath) {
 }
 
 /**
- *
- * @param {string} vaultPath The path of the test vault.
+ * Install the theme into an Obsidian vault.
+ * @param {string} vaultPath The path of the vault.
  * @param {string} themeFile The CSS theme file
  * @param {string} manifestFile The Obsidian manifest
  */
@@ -51,9 +52,15 @@ function installTheme(vaultPath, themeFile, manifestFile) {
   console.log(`Installed "${manifest.name}" theme to: ${themeDir}`);
 }
 
+const vaultPath = resolve(args[0] ?? testVaultPath);
 
-if (!existsSync(testVaultPath)) {
+if (!existsSync(vaultPath)) {
+  if (vaultPath !== testVaultPath) {
+    console.error(`Vault folder not found: ${vaultPath}`);
+    process.exit(1);
+  }
   console.log(`Cloning ${testValtRepo} into ${testVaultPath}`);
   cloneTestVault(testValtRepo, testVaultPath);
 }
-installTheme(testVaultPath, themeCssPath, manifestPath);
+
+installTheme(vaultPath, themeCssPath, manifestPath);
